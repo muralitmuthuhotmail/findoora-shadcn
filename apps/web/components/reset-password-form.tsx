@@ -1,0 +1,331 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+import Link from "next/link"
+import { useSearchParams } from "next/navigation"
+import { cn } from "@workspace/ui/lib/utils"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@workspace/ui/components/card"
+import { Button } from "@workspace/ui/components/button"
+import { Input } from "@workspace/ui/components/input"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@workspace/ui/components/form"
+
+// Form validation schema for reset password
+const resetPasswordSchema = z.object({
+  password: z
+    .string()
+    .min(1, { message: "Password is required" })
+    .min(8, { message: "Password must be at least 8 characters long" })
+    .max(100, { message: "Password must be less than 100 characters" })
+    .regex(/[A-Z]/, { message: "Password must contain at least one uppercase letter" })
+    .regex(/[a-z]/, { message: "Password must contain at least one lowercase letter" })
+    .regex(/[0-9]/, { message: "Password must contain at least one number" })
+    .regex(/[^A-Za-z0-9]/, { message: "Password must contain at least one special character" }),
+  confirmPassword: z
+    .string()
+    .min(1, { message: "Please confirm your password" }),
+}).refine((data) => data.password === data.confirmPassword, {
+  message: "Passwords don't match",
+  path: ["confirmPassword"],
+})
+
+type ResetPasswordFormValues = z.infer<typeof resetPasswordSchema>
+
+export function ResetPasswordForm({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
+  const [isLoading, setIsLoading] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+  const [isValidToken, setIsValidToken] = useState<boolean | null>(null)
+  const searchParams = useSearchParams()
+  const token = searchParams.get('token')
+  
+  // Initialize form with resolver and default values
+  const form = useForm<ResetPasswordFormValues>({
+    resolver: zodResolver(resetPasswordSchema),
+    defaultValues: {
+      password: "",
+      confirmPassword: "",
+    },
+  })
+
+  // Validate token on component mount
+  useEffect(() => {
+    const validateToken = async () => {
+      if (!token) {
+        setIsValidToken(false)
+        return
+      }
+      
+      try {
+        // TODO: Replace with actual token validation logic
+        console.log("Validating token:", token)
+        
+        // Simulate API call to validate token
+        await new Promise(resolve => setTimeout(resolve, 1000))
+        
+        // TODO: Check if token is valid and not expired
+        setIsValidToken(true)
+        
+      } catch (error) {
+        console.error("Token validation error:", error)
+        setIsValidToken(false)
+      }
+    }
+
+    validateToken()
+  }, [token])
+
+  // Enhanced submit handler with proper error handling
+  const onSubmit = async (data: ResetPasswordFormValues) => {
+    try {
+      setIsLoading(true)
+      // TODO: Replace with actual reset password logic
+      console.log("Reset password attempt:", { token })
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000))
+      
+      // TODO: Handle successful password reset
+      console.log("Password reset successful")
+      setIsSuccess(true)
+      
+    } catch (error) {
+      // TODO: Handle reset password errors (show toast, set form errors, etc.)
+      console.error("Reset password error:", error)
+      form.setError("root", {
+        message: "Something went wrong. Please try again or request a new reset link.",
+      })
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const isFormDisabled = isLoading
+
+  // Show loading state while validating token
+  if (isValidToken === null) {
+    return (
+      <div className={cn("flex flex-col gap-6", className)} {...props}>
+        <Card>
+          <CardHeader className="text-center">
+            <CardTitle className="text-xl">Reset your password</CardTitle>
+            <CardDescription>
+              Validating reset link...
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="flex justify-center py-8">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+          </CardContent>
+        </Card>
+      </div>
+    )
+  }
+
+  // Show error state for invalid/expired token
+  if (!isValidToken) {
+    return (
+      <div className={cn("flex flex-col gap-6", className)} {...props}>
+        <Card>
+          <CardHeader className="text-center">
+            <CardTitle className="text-xl">Invalid reset link</CardTitle>
+            <CardDescription>
+              This password reset link is invalid or has expired
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="text-center space-y-4">
+              <div className="mx-auto w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                <svg
+                  className="w-6 h-6 text-red-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </div>
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">
+                  The link may have expired or been used already.
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Please request a new password reset link.
+                </p>
+              </div>
+            </div>
+            
+            <div className="space-y-3">
+              <Button asChild className="w-full">
+                <Link href="/auth/forgot-password">
+                  Request new reset link
+                </Link>
+              </Button>
+              
+              <Button asChild variant="outline" className="w-full">
+                <Link href="/auth/login">
+                  Back to sign in
+                </Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    )
+  }
+
+  // Show success state after password reset
+  if (isSuccess) {
+    return (
+      <div className={cn("flex flex-col gap-6", className)} {...props}>
+        <Card>
+          <CardHeader className="text-center">
+            <CardTitle className="text-xl">Password reset successful</CardTitle>
+            <CardDescription>
+              Your password has been successfully updated
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="text-center space-y-4">
+              <div className="mx-auto w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                <svg
+                  className="w-6 h-6 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <div className="space-y-2">
+                <p className="text-sm text-muted-foreground">
+                  You can now sign in with your new password.
+                </p>
+              </div>
+            </div>
+            
+            <Button asChild className="w-full">
+              <Link href="/auth/login">
+                Continue to sign in
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    )
+  }
+
+  // Show reset password form
+  return (
+    <div className={cn("flex flex-col gap-6", className)} {...props}>
+      <Card>
+        <CardHeader className="text-center">
+          <CardTitle className="text-xl">Reset your password</CardTitle>
+          <CardDescription>
+            Enter your new password below
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              {/* Display root form errors */}
+              {form.formState.errors.root && (
+                <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive">
+                  {form.formState.errors.root.message}
+                </div>
+              )}
+              
+              {/* Password fields */}
+              <div className="space-y-4">
+                <FormField
+                  control={form.control}
+                  name="password"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>New password</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="password"
+                          placeholder="Enter your new password"
+                          autoComplete="new-password"
+                          disabled={isFormDisabled}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
+                <FormField
+                  control={form.control}
+                  name="confirmPassword"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Confirm new password</FormLabel>
+                      <FormControl>
+                        <Input
+                          type="password"
+                          placeholder="Confirm your new password"
+                          autoComplete="new-password"
+                          disabled={isFormDisabled}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              
+              <Button 
+                type="submit" 
+                className="w-full" 
+                disabled={isFormDisabled}
+              >
+                {isLoading ? "Updating password..." : "Update password"}
+              </Button>
+            </form>
+          </Form>
+        </CardContent>
+        {/* Back to login link */}
+        <div className="text-center text-sm">
+            Remember your password?{" "}
+            <Link
+            href="/auth/login"
+            className="underline underline-offset-4">
+            Back to sign in
+            </Link>
+        </div>
+      </Card>
+    </div>
+  )
+}
