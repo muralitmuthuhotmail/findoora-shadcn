@@ -29,7 +29,7 @@ function AuthCard({
   return (
     <Card
       className={cn(
-        "shadow-xl border border-border rounded-2xl",
+        "shadow-xl border border-border rounded-xl",
         // "sm:px-4 sm:shadow-xl sm:border sm:bg-card sm:rounded-xl bg-transparent border-0 shadow-none rounded-none",
         className,
       )}
