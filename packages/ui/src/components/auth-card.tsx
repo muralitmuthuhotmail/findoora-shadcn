@@ -27,7 +27,13 @@ function AuthCard({
   ...props
 }: AuthCardProps) {
   return (
-    <Card className={className} {...props}>
+    <Card
+      className={cn(
+        "sm:shadow sm:border sm:bg-card sm:rounded-lg bg-transparent border-0 shadow-none rounded-none",
+        className,
+      )}
+      {...props}
+    >
       <CardHeader className={cn("text-center", headerClassName)}>
         <CardTitle className="text-xl">{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
