@@ -74,6 +74,9 @@ export default function HeroSectionOne() {
           <Button
             className="min-w-40 px-4 hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 shadow rounded-full"
             size={"lg"}
+            onClick={() => {
+              window.location.href = "/auth/signup"; // Redirect to sign-in page
+            }}
           >
             Get Started
           </Button>
@@ -111,14 +114,19 @@ export default function HeroSectionOne() {
 
 const Navbar = () => {
   return (
-    <nav className="flex w-full items-center justify-between border-t border-b border-border px-4 py-2 bg-background/80 backdrop-blur">
-      <Logo />
-      <Button
-        className="px-4 hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 shadow"
-        size={"sm"}
-      >
-        Sign In
-      </Button>
+    <nav className="flex w-full items-center  border-t border-b border-border px-4 py-2 bg-background/80 backdrop-blur">
+      <div className="flex justify-between gap-4 max-w-6xl mx-auto w-full">
+        <Logo />
+        <Button
+          className="px-4 hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 shadow"
+          size={"sm"}
+          onClick={() => {
+            window.location.href = "/auth/login"; // Redirect to sign-in page
+          }}
+        >
+          Sign In
+        </Button>
+      </div>
     </nav>
   );
 };

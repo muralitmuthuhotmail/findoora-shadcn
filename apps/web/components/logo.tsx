@@ -30,7 +30,7 @@ interface LogoProps {
    * Size of the logo and text.
    * @default "sm"
    */
-  size?: "sm" | "lg" ;
+  size?: "sm" | "lg";
 }
 
 const sizeMap = {
@@ -67,10 +67,7 @@ export const Logo: React.FC<LogoProps> = ({
       />
       {!hideText && (
         <h1
-          className={cn(
-            "font-display font-semibold text-foreground",
-            textSize,
-          )}
+          className={cn("font-display font-semibold text-foreground", textSize)}
         >
           {text}
         </h1>
