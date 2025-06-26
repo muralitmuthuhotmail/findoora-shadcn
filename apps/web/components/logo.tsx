@@ -30,14 +30,12 @@ interface LogoProps {
    * Size of the logo and text.
    * @default "sm"
    */
-  size?: "sm" | "lg" | "xl" | "2xl";
+  size?: "sm" | "lg" ;
 }
 
 const sizeMap = {
   sm: { icon: "1.5rem", text: "text-md md:text-lg" },
-  lg: { icon: "2.25rem", text: "text-lg md:text-2xl" },
-  xl: { icon: "3rem", text: "text-xl md:text-4xl" },
-  "2xl": { icon: "4rem", text: "text-2xl md:text-5xl" },
+  lg: { icon: "2rem", text: "text-2xl md:text-2xl" },
 };
 
 export const Logo: React.FC<LogoProps> = ({
@@ -70,7 +68,7 @@ export const Logo: React.FC<LogoProps> = ({
       {!hideText && (
         <h1
           className={cn(
-            "font-display font-bold text-foreground tracking-tight",
+            "font-display font-semibold text-foreground",
             textSize,
           )}
         >

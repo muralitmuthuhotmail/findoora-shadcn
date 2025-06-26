@@ -30,7 +30,7 @@ function AuthCard({
     <Card
       className={cn(
         "shadow-xl border border-border",
-        "sm:px-4 sm:shadow-xl sm:border sm:bg-card sm:rounded-xl bg-transparent border-0 shadow-none rounded-none",
+        // "sm:px-4 sm:shadow-xl sm:border sm:bg-card sm:rounded-xl bg-transparent border-0 shadow-none rounded-none",
         className,
       )}
       {...props}
