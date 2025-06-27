@@ -21,8 +21,8 @@ export default function HeroSectionOne() {
       <div className="absolute inset-x-0 bottom-0 h-px w-full bg-border">
         <div className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-primary to-transparent" />
       </div>
-      <div className="px-4 py-10 md:py-20">
-        <h1 className="relative z-10 mx-auto max-w-4xl text-center font-display font-bold text-foreground text-2xl md:text-4xl lg:text-5xl leading-tight tracking-tight">
+      <div className="px-10 py-15 md:py-20">
+        <h1 className="relative z-10 mx-auto max-w-4xl text-center font-display font-bold text-foreground text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight">
           {"Find and compare the best SaaS tools for your business"
             .split(" ")
             .map((word, index) => (
@@ -50,7 +50,7 @@ export default function HeroSectionOne() {
           }}
           transition={{
             duration: 0.5,
-            delay: 1.5,
+            delay: 2,
           }}
           className="relative z-10 mx-auto max-w-xl py-4 text-center font-body text-lg md:text-xl font-normal text-muted-foreground"
         >
