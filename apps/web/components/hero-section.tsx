@@ -2,8 +2,7 @@
 
 import { Button } from "@workspace/ui/components/button";
 import { motion } from "motion/react";
-import { useTheme } from "next-themes"; // If you use a theme provider
-import Logo from "./logo";
+import Logo from "@/components/logo";
 
 export default function HeroSectionOne() {
   // Optional: get theme if you want to use theme-based logic
@@ -114,7 +113,7 @@ export default function HeroSectionOne() {
 
 const Navbar = () => {
   return (
-    <nav className="flex w-full items-center  border-t border-b border-border px-4 py-2 bg-background/80 backdrop-blur">
+    <nav className="flex w-full items-center  border-t border-b border-border px-4 py-2 backdrop-blur sticky top-0 z-50 bg-background/40">
       <div className="flex justify-between gap-4 max-w-6xl mx-auto w-full">
         <Logo />
         <Button

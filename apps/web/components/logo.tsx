@@ -1,79 +1,276 @@
 import { cn } from "@workspace/ui/lib/utils";
-import React from "react";
+import React, { forwardRef } from "react";
+import { GalleryVerticalEnd, type LucideIcon } from "lucide-react";
 
-interface LogoProps {
+// Size configurations
+type LogoSize = "xs" | "sm" | "md" | "lg" | "xl";
+type IconVariant = "default" | "secondary" | "outline" | "ghost" | "gradient";
+type IconShape = "square" | "rounded" | "circle";
+type TextWeight = "normal" | "medium" | "semibold" | "bold";
+type Orientation = "horizontal" | "vertical";
+
+// Style configuration objects
+const sizeConfig = {
+  xs: {
+    gap: "gap-1.5",
+    iconSize: "size-6",
+    textSize: "text-sm",
+    innerIcon: "size-3",
+  },
+  sm: {
+    gap: "gap-2",
+    iconSize: "size-8",
+    textSize: "text-base md:text-lg",
+    innerIcon: "size-4",
+  },
+  md: {
+    gap: "gap-2.5",
+    iconSize: "size-10",
+    textSize: "text-lg md:text-xl",
+    innerIcon: "size-5",
+  },
+  lg: {
+    gap: "gap-3",
+    iconSize: "size-12",
+    textSize: "text-xl md:text-2xl",
+    innerIcon: "size-6",
+  },
+  xl: {
+    gap: "gap-3.5",
+    iconSize: "size-16",
+    textSize: "text-2xl md:text-3xl",
+    innerIcon: "size-8",
+  },
+} as const;
+
+const iconVariantConfig = {
+  default: "bg-primary text-primary-foreground",
+  secondary: "bg-secondary text-secondary-foreground",
+  outline: "border-2 border-primary text-primary bg-transparent",
+  ghost: "bg-transparent text-foreground",
+  gradient:
+    "bg-gradient-to-br from-primary to-primary/80 text-primary-foreground",
+} as const;
+
+const iconShapeConfig = {
+  square: "rounded-md",
+  rounded: "rounded-lg",
+  circle: "rounded-full",
+} as const;
+
+const textWeightConfig = {
+  normal: "font-normal",
+  medium: "font-medium",
+  semibold: "font-semibold",
+  bold: "font-bold",
+} as const;
+
+const innerIconSizeMap = {
+  xs: "size-3",
+  sm: "size-4",
+  md: "size-5",
+  lg: "size-6",
+  xl: "size-8",
+} as const;
+
+export interface LogoProps extends React.HTMLAttributes<HTMLElement> {
   /**
-   * The text to display next to the logo icon.
-   * @default "Findoora"
-   */
-  text?: string;
-  /**
-   * Additional className for the wrapper div.
-   */
-  className?: string;
-  /**
-   * Size of the logo icon (width & height in rem, px, etc).
-   * @default "1.5rem" (24px)
-   */
-  iconSize?: string | number;
-  /**
-   * Gradient colors for the icon.
-   * @default ["from-primary", "to-secondary"]
-   */
-  gradientFrom?: string;
-  gradientTo?: string;
-  /**
-   * Hide the text label.
-   */
-  hideText?: boolean;
-  /**
-   * Size of the logo and text.
+   * The size of the logo
    * @default "sm"
    */
-  size?: "sm" | "lg";
+  size?: LogoSize;
+
+  /**
+   * The orientation of the logo
+   * @default "horizontal"
+   */
+  orientation?: Orientation;
+
+  /**
+   * Whether the logo should have interactive hover effects
+   * @default false
+   */
+  interactive?: boolean;
+
+  /**
+   * The text to display alongside the icon
+   * @default "Findoora Inc."
+   */
+  text?: string;
+
+  /**
+   * Whether to hide the text and show only the icon
+   * @default false
+   */
+  hideText?: boolean;
+
+  /**
+   * The icon component to use (Lucide icon or custom component)
+   * @default GalleryVerticalEnd
+   */
+  icon?: LucideIcon | React.ComponentType<{ className?: string }>;
+
+  /**
+   * Visual variant of the icon container
+   * @default "default"
+   */
+  iconVariant?: IconVariant;
+
+  /**
+   * Shape of the icon container
+   * @default "square"
+   */
+  iconShape?: IconShape;
+
+  /**
+   * Font weight of the text
+   * @default "medium"
+   */
+  textWeight?: TextWeight;
+
+  /**
+   * Custom icon size (overrides size variant)
+   */
+  customIconSize?: string | number;
+
+  /**
+   * Custom icon class name
+   */
+  iconClassName?: string;
+
+  /**
+   * Custom text class name
+   */
+  textClassName?: string;
+
+  /**
+   * Whether the logo should be rendered as a link
+   * @default false
+   */
+  asLink?: boolean;
+
+  /**
+   * URL for the link (only used when asLink is true)
+   * @default "#"
+   */
+  href?: string;
+
+  /**
+   * Link target (only used when asLink is true)
+   */
+  target?: string;
+
+  /**
+   * Link rel attribute (only used when asLink is true)
+   */
+  rel?: string;
+
+  /**
+   * Accessible label for screen readers
+   */
+  "aria-label"?: string;
 }
 
-const sizeMap = {
-  sm: { icon: "1.5rem", text: "text-md md:text-lg" },
-  lg: { icon: "2rem", text: "text-2xl md:text-2xl" },
-};
+export const Logo = forwardRef<HTMLElement, LogoProps>(
+  (
+    {
+      text = "Findoora Inc.",
+      hideText = false,
+      icon: IconComponent = GalleryVerticalEnd,
+      size = "sm",
+      orientation = "horizontal",
+      interactive = false,
+      iconVariant = "default",
+      iconShape = "square",
+      textWeight = "medium",
+      customIconSize,
+      iconClassName,
+      textClassName,
+      className,
+      asLink = false,
+      href = "#",
+      target,
+      rel,
+      "aria-label": ariaLabel,
+      onClick,
+      ...props
+    },
+    ref,
+  ) => {
+    const Component = asLink ? "a" : "div";
+    const finalInteractive = interactive || asLink || !!onClick;
 
-export const Logo: React.FC<LogoProps> = ({
-  text = "Findoora",
-  className,
-  iconSize,
-  gradientFrom = "from-primary",
-  gradientTo = "to-secondary",
-  hideText = false,
-  size = "sm",
-}) => {
-  const { icon, text: textSize } = sizeMap[size] || sizeMap.sm;
-  const finalIconSize = iconSize ?? icon;
+    // Get size configuration
+    const sizeStyles = sizeConfig[size];
 
-  return (
-    <div className={cn("flex items-center gap-2", className)}>
-      <div
-        className={cn(
-          "rounded-full shadow bg-gradient-to-br",
-          gradientFrom,
-          gradientTo,
-        )}
-        style={{
-          width: finalIconSize,
-          height: finalIconSize,
-          minWidth: finalIconSize,
-          minHeight: finalIconSize,
-        }}
-      />
-      {!hideText && (
-        <h1
-          className={cn("font-display font-semibold text-foreground", textSize)}
-        >
-          {text}
-        </h1>
-      )}
-    </div>
-  );
-};
+    // Build class names
+    const logoClasses = cn(
+      "inline-flex items-center font-medium transition-all duration-200 ease-in-out",
+      sizeStyles.gap,
+      orientation === "vertical" ? "flex-col" : "flex-row",
+      finalInteractive && "hover:opacity-80 active:scale-95 cursor-pointer",
+      className,
+    );
+
+    const iconClasses = cn(
+      "flex items-center justify-center transition-all duration-200",
+      sizeStyles.iconSize,
+      iconVariantConfig[iconVariant],
+      iconShapeConfig[iconShape],
+      iconClassName,
+    );
+
+    const textClasses = cn(
+      "transition-colors duration-200",
+      sizeStyles.textSize,
+      textWeightConfig[textWeight],
+      textClassName,
+    );
+
+    const innerIconClass = innerIconSizeMap[size];
+
+    const iconStyle = customIconSize
+      ? {
+          width: customIconSize,
+          height: customIconSize,
+          minWidth: customIconSize,
+          minHeight: customIconSize,
+        }
+      : undefined;
+
+    const linkProps = asLink
+      ? {
+          href,
+          target,
+          rel: target === "_blank" ? "noopener noreferrer" : rel,
+        }
+      : {};
+
+    const accessibilityProps = {
+      "aria-label": ariaLabel || (hideText ? text : undefined),
+      role: finalInteractive ? "button" : undefined,
+      tabIndex: finalInteractive ? 0 : undefined,
+    };
+
+    return (
+      <Component
+        ref={ref as any}
+        className={logoClasses}
+        onClick={onClick}
+        {...linkProps}
+        {...accessibilityProps}
+        {...props}
+      >
+        <div className={iconClasses} style={iconStyle} aria-hidden={!hideText}>
+          <IconComponent className={innerIconClass} />
+        </div>
+
+        {!hideText && <span className={textClasses}>{text}</span>}
+      </Component>
+    );
+  },
+);
+
+Logo.displayName = "Logo";
 
 export default Logo;
