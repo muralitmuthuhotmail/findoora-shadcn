@@ -2,26 +2,12 @@
 
 import { Button } from "@workspace/ui/components/button";
 import { motion } from "motion/react";
-import Logo from "@/components/logo";
 
 export default function HeroSectionOne() {
-  // Optional: get theme if you want to use theme-based logic
-  // const { theme } = useTheme();
-
   return (
     <div className="flex max-w-screen flex-col items-center justify-center">
-      <Navbar />
-      <div className="absolute inset-y-0 left-0 h-full w-px bg-border">
-        <div className="absolute top-0 h-40 w-px bg-gradient-to-b from-transparent via-primary to-transparent" />
-      </div>
-      <div className="absolute inset-y-0 right-0 h-full w-px bg-border">
-        <div className="absolute h-40 w-px bg-gradient-to-b from-transparent via-primary to-transparent" />
-      </div>
-      <div className="absolute inset-x-0 bottom-0 h-px w-full bg-border">
-        <div className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-primary to-transparent" />
-      </div>
-      <div className="px-10 py-15 md:py-20">
-        <h1 className="relative z-10 mx-auto max-w-4xl text-center font-display font-bold text-foreground text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight">
+      <div className="w-full py-10 md:py-20">
+        <h1 className="relative z-10 mx-auto text-center font-display font-bold text-foreground text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight">
           {"Find and compare the best SaaS tools for your business"
             .split(" ")
             .map((word, index) => (
@@ -68,7 +54,7 @@ export default function HeroSectionOne() {
             duration: 0.5,
             delay: 2,
           }}
-          className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
+          className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4 m-3"
         >
           <Button
             className="min-w-40 px-4 hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 shadow rounded-full"
@@ -103,29 +89,10 @@ export default function HeroSectionOne() {
           className="relative z-10 mt-20 rounded-3xl border border-border bg-muted p-4 shadow-md"
         >
           <div className="w-full overflow-hidden rounded-xl border border-border">
-            <div className="aspect-[16/9] h-auto w-full object-cover" />
+            <div className="aspect-[16/9] h-auto w-full object-cover backdrop-blur bg-card/50" />
           </div>
         </motion.div>
       </div>
     </div>
   );
 }
-
-const Navbar = () => {
-  return (
-    <nav className="flex w-full items-center  border-t border-b border-border px-4 py-2 backdrop-blur sticky top-0 z-50 bg-background/40">
-      <div className="flex justify-between gap-4 max-w-6xl mx-auto w-full">
-        <Logo />
-        <Button
-          className="px-4 hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 shadow"
-          size={"sm"}
-          onClick={() => {
-            window.location.href = "/auth/login"; // Redirect to sign-in page
-          }}
-        >
-          Sign In
-        </Button>
-      </div>
-    </nav>
-  );
-};

@@ -1,25 +1,17 @@
 "use client";
 import { GlowingEffectDemo } from "@/components/glowing-effect-demo";
 import HeroSectionOne from "@/components/hero-section";
-import { motion } from "motion/react";
 import { AuroraBackground } from "@workspace/ui/components/ui/aurora-background";
+import Navbar from "@/components/navbar";
 export default function Page() {
   return (
-    <>
-      <AuroraBackground className="fixed inset-0 z-[-1]">
-        <motion.div
-          initial={{ opacity: 0.0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="relative flex flex-col gap-4 items-center justify-center px-4"
-        ></motion.div>
-      </AuroraBackground>
-      <HeroSectionOne />
-      <GlowingEffectDemo />
-    </>
+    <div className="relative flex flex-col items-center justify-center">
+      <AuroraBackground className="fixed inset-0 z-[-1]"> </AuroraBackground>
+      <Navbar />
+      <div className="px-4 px-5 py-10 w-full max-w-6xl">
+        <HeroSectionOne />
+        <GlowingEffectDemo />
+      </div>
+    </div>
   );
 }
