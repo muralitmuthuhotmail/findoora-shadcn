@@ -5,8 +5,8 @@ import { motion } from "motion/react";
 
 export default function HeroSectionOne() {
   return (
-    <div className="flex max-w-screen flex-col items-center justify-center">
-      <div className="w-full py-10 md:py-20">
+    <div className="flex flex-col items-center justify-center">
+      <div className="py-10 md:py-20">
         <h1 className="relative z-10 mx-auto text-center font-display font-bold text-foreground text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight">
           {"Find and compare the best SaaS tools for your business"
             .split(" ")
@@ -54,7 +54,7 @@ export default function HeroSectionOne() {
             duration: 0.5,
             delay: 2,
           }}
-          className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4 m-3"
+          className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
         >
           <Button
             className="min-w-40 px-4 hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 shadow rounded-full"

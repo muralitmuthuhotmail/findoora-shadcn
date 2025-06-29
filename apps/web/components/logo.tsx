@@ -19,8 +19,8 @@ const sizeConfig = {
   },
   sm: {
     gap: "gap-2",
-    iconSize: "size-8",
-    textSize: "text-base md:text-lg",
+    iconSize: "size-7",
+    textSize: "text-base",
     innerIcon: "size-4",
   },
   md: {

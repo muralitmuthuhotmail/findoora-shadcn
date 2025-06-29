@@ -6,9 +6,9 @@ import SwitchMode from "@workspace/ui/components/ui/mode-switch";
 
 const Navbar = () => {
   return (
-    <nav className="flex w-full items-center px-4 py-2 backdrop-blur sticky top-0 z-50 bg-card/60">
+    <nav className="flex w-full items-center px-4 py-2 backdrop-blur sticky top-0 z-50">
       <div className="flex justify-between gap-4 mx-auto w-full max-w-6xl">
-        <Logo />
+        <Logo asLink href="/" size="sm"  />
         <div className="flex items-center gap-4">
           <SwitchMode />
           <Button

@@ -167,7 +167,7 @@
     font-kerning: normal;
   }
   
-  /* Modern scrollbars */
+  /* Modern scrollbars - overlay style to prevent content width changes */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -192,6 +192,23 @@
   
   .dark ::-webkit-scrollbar-thumb:hover {
     background: oklch(0.5 0 0);
+  }
+  
+  /* Force overlay scrollbars to prevent content width changes */
+  html {
+    scrollbar-gutter: stable;
+    overflow-y: overlay;
+    overflow-x: overlay;
+  }
+  
+  /* For browsers that support scrollbar-width */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.7 0 0) transparent;
+  }
+  
+  .dark * {
+    scrollbar-color: oklch(0.4 0 0) transparent;
   }
   
   /* Modern focus states */
