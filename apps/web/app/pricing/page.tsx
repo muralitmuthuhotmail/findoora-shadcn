@@ -93,7 +93,7 @@ const Pricing04 = () => {
           </TabsList>
         </Tabs>
       </div>
-      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {plans.map((plan) => (
           <div
             key={plan.name}

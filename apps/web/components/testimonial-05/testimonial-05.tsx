@@ -83,7 +83,7 @@ const Testimonial05 = () => (
         Testimonials
       </h1>
     </div>
-    <div className="w-full max-w-screen-xl mx-auto">
+    <div className="w-full mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {testimonials.map((testimonial, index) => (
           <motion.div
