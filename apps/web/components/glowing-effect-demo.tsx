@@ -5,8 +5,9 @@ import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
 
 export function GlowingEffectDemo() {
   return (
-    <div className="flex max-w-screen flex-col items-center justify-center">
-      <div className="w-full py-10 md:py-20">
+    <div className="min-h-screen bg-background text-foreground  justify-center flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full text-center space-y-10">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter">Features </h1>
         <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
           <GridItem
             area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"

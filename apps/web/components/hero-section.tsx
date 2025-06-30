@@ -5,9 +5,9 @@ import { motion } from "motion/react";
 
 export default function HeroSectionOne() {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="py-10 md:py-20">
-        <h1 className="relative z-10 mx-auto text-center font-display font-bold text-foreground text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight">
+    <div className="min-h-screen bg-background text-foreground  justify-center flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="w-full text-center space-y-10">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter">
           {"Find and compare the best SaaS tools for your business"
             .split(" ")
             .map((word, index) => (
@@ -37,7 +37,7 @@ export default function HeroSectionOne() {
             duration: 0.5,
             delay: 2,
           }}
-          className="relative z-10 mx-auto max-w-xl py-4 text-center font-body text-lg md:text-xl font-normal text-muted-foreground"
+          className="mt-4 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto"
         >
           Discover, compare, and choose the right SaaS products for your needs.
           Findoora helps you make informed decisions with trusted reviews and
@@ -57,7 +57,7 @@ export default function HeroSectionOne() {
           className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
         >
           <Button
-            className="min-w-40 px-4 hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 shadow-sm rounded-full"
+            className="min-w-50 shadow-sm rounded-full text-base font-semibold py-6 hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5"
             size={"lg"}
             onClick={() => {
               window.location.href = "/auth/signup"; // Redirect to sign-in page
@@ -67,7 +67,7 @@ export default function HeroSectionOne() {
           </Button>
           <Button
             variant={"outline"}
-            className="min-w-40 px-4 hover:bg-accent/90 transition-all duration-300 hover:-translate-y-0.5 shadow-sm rounded-full"
+            className="min-w-50 shadow-sm rounded-full text-base font-semibold py-6 transition-all duration-300 hover:-translate-y-0.5"
             size={"lg"}
           >
             Learn More

@@ -2,13 +2,20 @@
 import dynamic from "next/dynamic";
 import HeroSectionOne from "@/components/hero-section";
 import Navbar from "@/components/navbar";
-const AuroraBackground = dynamic(() => import("@workspace/ui/components/ui/aurora-background").then(mod=>mod.AuroraBackground), { ssr: false });
+import Pricing04 from "./pricing/page";
+const AuroraBackground = dynamic(
+  () =>
+    import("@workspace/ui/components/ui/aurora-background").then(
+      (mod) => mod.AuroraBackground,
+    ),
+  { ssr: false },
+);
 const GlowingEffectDemo = dynamic(
   () =>
     import("@/components/glowing-effect-demo").then(
-      (mod) => mod.GlowingEffectDemo
+      (mod) => mod.GlowingEffectDemo,
     ),
-  { ssr: false }
+  { ssr: false },
 );
 
 export default function Page() {
@@ -22,6 +29,7 @@ export default function Page() {
         <div className="py-10 max-w-6xl">
           <HeroSectionOne />
           <GlowingEffectDemo />
+          <Pricing04 />
         </div>
       </div>
     </>

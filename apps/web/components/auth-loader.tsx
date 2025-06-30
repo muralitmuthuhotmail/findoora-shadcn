@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import LoadingSpinner from './loading-spinner';
+import { useState, useEffect } from "react";
+import LoadingSpinner from "./loading-spinner";
 
 interface AuthLoaderProps {
   children: React.ReactNode;

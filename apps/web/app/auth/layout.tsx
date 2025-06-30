@@ -5,8 +5,8 @@ import dynamic from "next/dynamic";
 
 const AuroraBackground = dynamic(() =>
   import("@workspace/ui/components/ui/aurora-background").then(
-    (mod) => mod.AuroraBackground
-  )
+    (mod) => mod.AuroraBackground,
+  ),
 );
 
 export default function AuthLayout({
