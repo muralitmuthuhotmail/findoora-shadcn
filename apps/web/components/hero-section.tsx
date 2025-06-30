@@ -57,7 +57,7 @@ export default function HeroSectionOne() {
           className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
         >
           <Button
-            className="min-w-40 px-4 hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 shadow rounded-full"
+            className="min-w-40 px-4 hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 shadow-sm rounded-full"
             size={"lg"}
             onClick={() => {
               window.location.href = "/auth/signup"; // Redirect to sign-in page
@@ -67,7 +67,7 @@ export default function HeroSectionOne() {
           </Button>
           <Button
             variant={"outline"}
-            className="min-w-40 px-4 hover:bg-accent/90 transition-all duration-300 hover:-translate-y-0.5 shadow rounded-full"
+            className="min-w-40 px-4 hover:bg-accent/90 transition-all duration-300 hover:-translate-y-0.5 shadow-sm rounded-full"
             size={"lg"}
           >
             Learn More
