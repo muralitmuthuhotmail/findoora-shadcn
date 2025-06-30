@@ -65,9 +65,9 @@ const Pricing04 = () => {
   const [selectedBillingPeriod, setSelectedBillingPeriod] = useState("monthly");
 
   return (
-    <div className="min-h-screen bg-background text-foreground  justify-center flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8 space-y-12">
+    <div className="min-h-screen bg-background text-foreground  justify-center flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8 space-y-14">
       <div className="w-full text-center mt-10 space-y-10">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter">
           Pricing
         </h1>
         {/* <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -78,7 +78,7 @@ const Pricing04 = () => {
           onValueChange={setSelectedBillingPeriod}
           className="justify-center flex items-center"
         >
-          <TabsList className="h-11 bg-background border px-1.5 rounded-full shadow-md">
+          <TabsList className="h-11 bg-card border px-1.5 rounded-full shadow-md">
             <TabsTrigger
               value="monthly"
               className="px-4 py-1.5 rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
@@ -101,9 +101,9 @@ const Pricing04 = () => {
             className={cn(
               "relative flex flex-col rounded-2xl border p-8 transition-all",
               {
-                "bg-muted/50 border-primary shadow-2xl shadow-primary/10":
+                "bg-card border-primary shadow-2xl shadow-primary/10":
                   plan.isRecommended,
-                "border-border": !plan.isRecommended,
+                "border-border bg-card/60": !plan.isRecommended,
               },
             )}
           >

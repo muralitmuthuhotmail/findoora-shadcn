@@ -6,8 +6,10 @@ import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
 export function GlowingEffectDemo() {
   return (
     <div className="min-h-screen bg-background text-foreground  justify-center flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="w-full text-center space-y-10">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter">Features </h1>
+      <div className="w-full text-center space-y-14">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter">
+          Features{" "}
+        </h1>
         <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
           <GridItem
             area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
@@ -65,7 +67,7 @@ interface GridItemProps {
 const GridItem = ({ area, icon, title, description }: GridItemProps) => {
   return (
     <li className={`min-h-[14rem] list-none ${area}`}>
-      <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3 bg-blur bg-card/60">
+      <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3 bg-blur bg-card">
         <GlowingEffect
           spread={40}
           glow={true}

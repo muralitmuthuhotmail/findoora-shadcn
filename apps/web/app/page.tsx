@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import HeroSectionOne from "@/components/hero-section";
 import Navbar from "@/components/navbar";
 import Pricing04 from "./pricing/page";
+import Testimonial05 from "@/components/testimonial-05/testimonial-05";
 const AuroraBackground = dynamic(
   () =>
     import("@workspace/ui/components/ui/aurora-background").then(
@@ -26,10 +27,11 @@ export default function Page() {
       </AuroraBackground>
       <div className="bg-blur bg-background/40 w-full flex flex-col items-center justify-center">
         <Navbar />
-        <div className="py-10 max-w-6xl">
+        <div className="py-10 max-w-7xl">
           <HeroSectionOne />
           <GlowingEffectDemo />
           <Pricing04 />
+          <Testimonial05 />
         </div>
       </div>
     </>
