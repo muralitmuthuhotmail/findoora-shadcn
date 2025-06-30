@@ -62,10 +62,10 @@ const FAQ = memo<FAQProps>(
         aria-labelledby="faq-title"
       >
         <div className="flex flex-col md:flex-row gap-x-12 gap-y-6 w-full">
-          <header className="min-w-sm">
+          <header className="max-w-sm">
             <h2
               id="faq-title"
-              className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter max-w-sm text-center md:text-left w-full mt-0 lg:mt-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter max-w-sm text-center md:text-left w-full mt-0 lg:mt-4 text-wrap"
             >
               {title}
             </h2>
