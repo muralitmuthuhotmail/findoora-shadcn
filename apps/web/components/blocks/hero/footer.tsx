@@ -96,7 +96,7 @@ NewsletterSection.displayName = "NewsletterSection";
 
 // Footer Links Section Component
 const FooterLinksSection = memo(() => (
-  <div className="lg:col-span-2">
+  <div className="lg:col-span-2 hidden sm:block">
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {FOOTER_SECTIONS.map((section) => (
         <div key={section.title} className="space-y-4">
@@ -167,7 +167,7 @@ LegalLinks.displayName = "LegalLinks";
 // Main Footer Component
 const SiteFooter = () => {
   return (
-    <footer className="bg-card border-t">
+    <footer className="bg-card border-t px-4">
       <div className="max-w-7xl mx-auto">
         {/* Newsletter Section & Links Grid - Left-Right Layout */}
         <div className="py-12">

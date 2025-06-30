@@ -27,7 +27,7 @@ export default function Page() {
       <Navbar />
       <AuroraBackground className="fixed inset-0 z-[-1] sm:block hidden" />
       <div className="flex w-full flex-col backdrop-blur justify-center items-center bg-card/50">
-        <div className="flex w-full max-w-7xl flex-col items-center justify-center py-8">
+        <div className="flex w-full max-w-7xl flex-col items-center justify-center py-8 px-4">
           <HeroSectionOne />
           <GlowingEffectDemo />
           <Pricing />
