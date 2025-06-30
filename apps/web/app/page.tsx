@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar";
 import Pricing04 from "./pricing/page";
 import Testimonial05 from "@/components/testimonial-05/testimonial-05";
 import FAQ02 from "@/components/faq-02/faq-02";
+import SiteFooter from "@/components/footer-04/footer";
 const AuroraBackground = dynamic(
   () =>
     import("@workspace/ui/components/ui/aurora-background").then(
@@ -26,7 +27,7 @@ export default function Page() {
       <Navbar />
         <AuroraBackground className="fixed inset-0 z-[-1] sm:block hidden" />
         <div className="flex w-full flex-col backdrop-blur justify-center items-center bg-card/50">
-          <div className="flex w-full max-w-7xl flex-col items-center justify-center px-4 py-8">
+          <div className="flex w-full max-w-7xl flex-col items-center justify-center py-8">
             <HeroSectionOne />
             <GlowingEffectDemo />
             <Pricing04 />
@@ -34,6 +35,7 @@ export default function Page() {
             <FAQ02 />
           </div>
         </div>
+        <SiteFooter />
     </>
   );
 }
