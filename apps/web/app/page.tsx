@@ -25,9 +25,9 @@ export default function Page() {
       <AuroraBackground className="fixed inset-0 z-[-1] w-screen h-screen sm:block hidden fade-in transition-all duration-500 ease-in-out">
         {" "}
       </AuroraBackground>
-      <div className="bg-blur bg-background/40 w-full flex flex-col items-center justify-center">
+      <div className="bg-blur bg-card/40 w-full flex flex-col items-center justify-center">
         <Navbar />
-        <div className="py-10 max-w-7xl">
+        <div className="py-10 max-w-7xl px-1 sm:px-0">
           <HeroSectionOne />
           <GlowingEffectDemo />
           <Pricing04 />

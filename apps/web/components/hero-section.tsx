@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 export default function HeroSectionOne() {
   return (
     <div className="min-h-screen text-foreground  justify-center flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="w-full text-center space-y-10">
+      <div className="w-full text-center space-y-14 mt-10">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter">
           {"Find and compare the best SaaS tools for your business"
             .split(" ")

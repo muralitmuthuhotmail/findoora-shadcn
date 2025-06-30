@@ -7,7 +7,6 @@ import {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
-  TooltipProvider,
 } from "@workspace/ui/components/tooltip";
 import { cn } from "@workspace/ui/lib/utils";
 import { Check, HelpCircle } from "lucide-react";
@@ -66,7 +65,7 @@ const Pricing04 = () => {
 
   return (
     <div className="min-h-screen text-foreground  justify-center flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8 space-y-14">
-      <div className="w-full text-center mt-10 space-y-10">
+      <div className="w-full text-center mt-10 space-y-6">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter">
           Pricing
         </h1>
@@ -78,16 +77,16 @@ const Pricing04 = () => {
           onValueChange={setSelectedBillingPeriod}
           className="justify-center flex items-center"
         >
-          <TabsList className="h-11 bg-card border px-1.5 rounded-full shadow-md">
+          <TabsList className="h-12 bg-card border px-1.5 rounded-full shadow-md transition-all p-2 py-3 align-items-center">
             <TabsTrigger
               value="monthly"
-              className="px-4 py-1.5 rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="h-8 p-4 py-1.5 rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
             >
               Monthly
             </TabsTrigger>
             <TabsTrigger
               value="yearly"
-              className="px-4 py-1.5 rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="h-8 p-4 py-1.5 rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
             >
               Yearly (Save {YEARLY_DISCOUNT}%)
             </TabsTrigger>
@@ -115,8 +114,8 @@ const Pricing04 = () => {
               </div>
             )}
             <div className="flex-grow">
-              <h3 className="text-2xl font-semibold">{plan.name}</h3>
-              <p className="mt-6 text-4xl font-bold">
+              <h3 className="text-xl font-semibold">{plan.name}</h3>
+              <p className="mt-4 text-2xl font-bold">
                 $
                 {selectedBillingPeriod === "monthly"
                   ? plan.price
@@ -125,16 +124,16 @@ const Pricing04 = () => {
                   /month
                 </span>
               </p>
-              <p className="mt-4 text-muted-foreground h-12">
+              <p className="mt-3 text-muted-foreground h-12">
                 {plan.description}
               </p>
 
               <Separator className="my-8" />
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {plan.features.map((feature) => (
                   <li key={feature.title} className="flex items-center gap-3">
                     <Check className="h-5 w-5 text-primary" />
-                    <span className="text-base">{feature.title}</span>
+                    <span className="text-md">{feature.title}</span>
                     {feature.tooltip && (
                       <Tooltip>
                         <TooltipTrigger className="cursor-help ml-auto">
@@ -149,7 +148,7 @@ const Pricing04 = () => {
             </div>
             <Button
               variant={plan.isRecommended ? "default" : "outline"}
-              className="w-full mt-8 rounded-full text-base font-semibold py-6"
+              className="w-full mt-6 rounded-full font-semibold py-5 text-base transition-all duration-300 hover:-translate-y-0.5"
             >
               Get Started
             </Button>
