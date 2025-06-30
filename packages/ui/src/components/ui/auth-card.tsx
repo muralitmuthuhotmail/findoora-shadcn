@@ -36,8 +36,12 @@ function AuthCard({
       {...props}
     >
       <CardHeader className={cn("text-center", headerClassName)}>
-        <CardTitle className="mt-1 text-lg sm:text-xl md:text-2xl font-semibold tracking-tightertext-center">{title}</CardTitle>
-        <CardDescription className="text-sm sm:text-md text-muted-foreground mx-auto">{description}</CardDescription>
+        <CardTitle className="mt-1 text-lg sm:text-xl md:text-2xl font-semibold tracking-tightertext-center">
+          {title}
+        </CardTitle>
+        <CardDescription className="text-sm sm:text-md text-muted-foreground mx-auto">
+          {description}
+        </CardDescription>
       </CardHeader>
       <CardContent className={contentClassName}>{children}</CardContent>
     </Card>

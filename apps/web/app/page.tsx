@@ -25,17 +25,17 @@ export default function Page() {
   return (
     <>
       <Navbar />
-        <AuroraBackground className="fixed inset-0 z-[-1] sm:block hidden" />
-        <div className="flex w-full flex-col backdrop-blur justify-center items-center bg-card/50">
-          <div className="flex w-full max-w-7xl flex-col items-center justify-center py-8">
-            <HeroSectionOne />
-            <GlowingEffectDemo />
-            <Pricing />
-            <Testimonial />
-            <FAQ />
-          </div>
+      <AuroraBackground className="fixed inset-0 z-[-1] sm:block hidden" />
+      <div className="flex w-full flex-col backdrop-blur justify-center items-center bg-card/50">
+        <div className="flex w-full max-w-7xl flex-col items-center justify-center py-8">
+          <HeroSectionOne />
+          <GlowingEffectDemo />
+          <Pricing />
+          <Testimonial />
+          <FAQ />
         </div>
-        <SiteFooter />
+      </div>
+      <SiteFooter />
     </>
   );
 }

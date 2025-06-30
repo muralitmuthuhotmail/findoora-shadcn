@@ -3,12 +3,7 @@ import { Input } from "@workspace/ui/components/input";
 import { Separator } from "@workspace/ui/components/separator";
 import Link from "next/link";
 import Logo from "@/components/logo";
-import {
-  FaTwitter,
-  FaInstagram,
-  FaLinkedin,
-  FaGithub,
-} from "react-icons/fa";
+import { FaTwitter, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { memo } from "react";
 
 const FOOTER_SECTIONS = [
@@ -88,11 +83,7 @@ const NewsletterSection = memo(() => (
         Subscribe to our newsletter for the latest updates.
       </p>
       <form className="flex gap-2">
-        <Input
-          type="email"
-          placeholder="Enter your email"
-          className="flex-1"
-        />
+        <Input type="email" placeholder="Enter your email" className="flex-1" />
         <Button type="submit" className="px-6">
           Subscribe
         </Button>
@@ -158,7 +149,7 @@ const LegalLinks = memo(() => (
     <span className="text-muted-foreground text-sm">
       © {CURRENT_YEAR} Findoora Inc. All rights reserved.
     </span>
-    { '|'}
+    <span className="text-muted-foreground text-sm">{"|"}</span>
     {LEGAL_LINKS.map(({ href, title }) => (
       <Link
         key={href}
@@ -181,16 +172,16 @@ const SiteFooter = () => {
         {/* Newsletter Section & Links Grid - Left-Right Layout */}
         <div className="py-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <NewsletterSection />
             <FooterLinksSection />
+            <NewsletterSection />
           </div>
         </div>
-        </div>
+      </div>
 
-        <Separator />
+      <Separator />
 
-        {/* Bottom Section - Single Line Layout */}
-        <div className="max-w-7xl mx-auto">
+      {/* Bottom Section - Single Line Layout */}
+      <div className="max-w-7xl mx-auto">
         <div className="py-6">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
             {/* Left: Logo */}
