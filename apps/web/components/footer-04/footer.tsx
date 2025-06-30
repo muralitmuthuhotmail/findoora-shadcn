@@ -177,7 +177,7 @@ LegalLinks.displayName = "LegalLinks";
 const SiteFooter = () => {
   return (
     <footer className="bg-card border-t">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto">
         {/* Newsletter Section & Links Grid - Left-Right Layout */}
         <div className="py-12">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -190,7 +190,7 @@ const SiteFooter = () => {
         <Separator />
 
         {/* Bottom Section - Single Line Layout */}
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto">
         <div className="py-6">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
             {/* Left: Logo */}

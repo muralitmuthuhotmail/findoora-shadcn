@@ -77,7 +77,7 @@ const testimonials = [
 ];
 
 const Testimonial05 = () => (
-  <div className="min-h-screen text-foreground  justify-center flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8 space-y-14">
+  <div className="min-h-screen text-foreground  justify-center flex flex-col items-center py-12 space-y-14">
     <div className="w-full text-center space-y-10">
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter">
         Testimonials

@@ -64,7 +64,7 @@ const Pricing04 = () => {
   const [selectedBillingPeriod, setSelectedBillingPeriod] = useState("monthly");
 
   return (
-    <div className="min-h-screen text-foreground  justify-center flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8 space-y-14">
+    <div className="min-h-screen text-foreground  justify-center flex flex-col items-center py-12 space-y-14">
       <div className="w-full text-center mt-10 space-y-6">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter">
           Pricing
