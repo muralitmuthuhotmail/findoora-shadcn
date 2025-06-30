@@ -6,7 +6,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import { cn } from "@workspace/ui/lib/utils";
-import { AuthCard } from "@workspace/ui/components/auth-card";
+import { AuthCard } from "@workspace/ui/components/ui/auth-card";
 import { Button } from "@workspace/ui/components/button";
 import { Input } from "@workspace/ui/components/input";
 import {
@@ -17,7 +17,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@workspace/ui/components/form";
-import { SocialLogin } from "@/components/social-login";
+import { SocialLogin } from "@/components/blocks/auth/social-login";
 
 // Form validation schema for signup
 const signupSchema = z

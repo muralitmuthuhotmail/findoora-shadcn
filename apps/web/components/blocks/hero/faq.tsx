@@ -41,12 +41,12 @@ const FAQ_DATA: readonly FAQItem[] = [
 	},
 ];
 
-interface FAQ02Props {
+interface FAQProps {
 	title?: string;
 	className?: string;
 }
 
-const FAQ02 = memo<FAQ02Props>(({ 
+const FAQ = memo<FAQProps>(({ 
 	title = "Frequently Asked Questions",
 	className = "" 
 }) => {
@@ -88,6 +88,6 @@ const FAQ02 = memo<FAQ02Props>(({
 	);
 });
 
-FAQ02.displayName = "FAQ02";
+FAQ.displayName = "FAQ";
 
-export default FAQ02;
+export default FAQ;

@@ -16,7 +16,7 @@ export default function AuthLayout({
 }>) {
   return (
     <>
-      <Navbar />
+      <Navbar hasBlur={false} />
       <div className="absolute top-0 w-full flex h-full min-h-screen flex-col items-center justify-center bg-blur bg-card/50">
         <AuroraBackground className="fixed inset-0 z-[-1] sm:block hidden">
           {" "}

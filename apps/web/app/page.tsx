@@ -1,11 +1,11 @@
 "use client";
 import dynamic from "next/dynamic";
-import HeroSectionOne from "@/components/hero-section";
+import HeroSectionOne from "@/components/blocks/hero/hero-section";
 import Navbar from "@/components/navbar";
-import Pricing04 from "./pricing/page";
-import Testimonial05 from "@/components/testimonial-05/testimonial-05";
-import FAQ02 from "@/components/faq-02/faq-02";
-import SiteFooter from "@/components/footer-04/footer";
+import Pricing from "@/components/blocks/hero/pricing";
+import Testimonial from "@/components/blocks/hero/testimonial";
+import FAQ from "@/components/blocks/hero/faq";
+import SiteFooter from "@/components/blocks/hero/footer";
 const AuroraBackground = dynamic(
   () =>
     import("@workspace/ui/components/ui/aurora-background").then(
@@ -15,7 +15,7 @@ const AuroraBackground = dynamic(
 );
 const GlowingEffectDemo = dynamic(
   () =>
-    import("@/components/glowing-effect-demo").then(
+    import("@/components/blocks/hero/glowing-effect-demo").then(
       (mod) => mod.GlowingEffectDemo,
     ),
   { ssr: false },
@@ -30,9 +30,9 @@ export default function Page() {
           <div className="flex w-full max-w-7xl flex-col items-center justify-center py-8">
             <HeroSectionOne />
             <GlowingEffectDemo />
-            <Pricing04 />
-            <Testimonial05 />
-            <FAQ02 />
+            <Pricing />
+            <Testimonial />
+            <FAQ />
           </div>
         </div>
         <SiteFooter />

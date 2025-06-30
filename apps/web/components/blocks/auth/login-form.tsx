@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { cn } from "@workspace/ui/lib/utils";
-import { AuthCard } from "@workspace/ui/components/auth-card";
-import { SocialLogin } from "@/components/social-login";
-import { EmailPasswordForm } from "@/components/email-password-form";
+import { AuthCard } from "@workspace/ui/components/ui/auth-card";
+import { SocialLogin } from "@/components/blocks/auth/social-login";
+import { EmailPasswordForm } from "@/components/blocks/auth/email-password-form";
 
 export function LoginForm({
   className,

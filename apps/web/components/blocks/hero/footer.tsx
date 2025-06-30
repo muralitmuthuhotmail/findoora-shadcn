@@ -158,7 +158,7 @@ const LegalLinks = memo(() => (
     <span className="text-muted-foreground text-sm">
       © {CURRENT_YEAR} Findoora Inc. All rights reserved.
     </span>
-    <Separator orientation="vertical" />
+    { '|'}
     {LEGAL_LINKS.map(({ href, title }) => (
       <Link
         key={href}
