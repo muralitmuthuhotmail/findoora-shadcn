@@ -1,8 +1,13 @@
 import Navbar from "@/components/navbar";
 import LoadingSpinner from "@/components/loading-spinner";
-import TransitionWrapper from "@/components/transition-wrapper";
-import { AuroraBackground } from "@workspace/ui/components/ui/aurora-background";
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
+
+const AuroraBackground = dynamic(() =>
+  import("@workspace/ui/components/ui/aurora-background").then(
+    (mod) => mod.AuroraBackground
+  )
+);
 
 export default function AuthLayout({
   children,
@@ -17,15 +22,7 @@ export default function AuthLayout({
           {" "}
         </AuroraBackground>
         <div className="flex w-full sm:max-w-md flex-col gap-6 mt-5 animate-fade-in transition-all duration-500 ease-in-out">
-          <Suspense
-            fallback={
-              <div className="animate-fade-in transition-opacity duration-300">
-                <LoadingSpinner />
-              </div>
-            }
-          >
-            <TransitionWrapper>{children}</TransitionWrapper>
-          </Suspense>
+          <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>
         </div>
       </div>
     </>
