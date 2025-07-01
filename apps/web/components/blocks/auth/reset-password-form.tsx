@@ -290,7 +290,7 @@ export function ResetPasswordForm({
               />
             </div>
 
-            <Button type="submit" className="w-full" disabled={isFormDisabled}>
+            <Button type="submit" className="w-full text-md" size={'lg'} disabled={isFormDisabled}>
               {isLoading ? "Updating password..." : "Update password"}
             </Button>
           </form>

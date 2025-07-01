@@ -166,7 +166,7 @@ export function ForgotPasswordForm({
               )}
             />
 
-            <Button type="submit" className="w-full" disabled={isFormDisabled}>
+            <Button type="submit" className="w-full text-md" size={'lg'} disabled={isFormDisabled}>
               {isLoading ? "Sending reset link..." : "Send reset link"}
             </Button>
           </form>

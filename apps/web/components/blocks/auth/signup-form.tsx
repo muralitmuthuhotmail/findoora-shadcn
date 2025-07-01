@@ -263,9 +263,9 @@ export function SignupForm({
                 )}
               />
 
-              <Button
-                type="submit"
-                className="w-full"
+              <Button type="submit" 
+                className="w-full text-md" 
+                size={'lg'}
                 disabled={isFormDisabled}
               >
                 {isLoading ? "Creating account..." : "Create account"}

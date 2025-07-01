@@ -153,7 +153,7 @@ export function EmailPasswordForm({
             )}
           />
 
-          <Button type="submit" className="w-full" disabled={isFormDisabled}>
+          <Button type="submit" className="w-full text-md" size={'lg'} disabled={isFormDisabled}>
             {isLoading ? "Signing in..." : "Sign in"}
           </Button>
         </div>
