@@ -145,20 +145,22 @@ SocialLinks.displayName = "SocialLinks";
 
 // Legal Links Component
 const LegalLinks = memo(() => (
-  <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
+  <div className="flex flex-col sm:flex-row items-center justify-center gap-x-6 gap-y-2 text-sm">
     <span className="text-muted-foreground text-sm">
       © {CURRENT_YEAR} Findoora Inc. All rights reserved.
     </span>
-    <span className="text-muted-foreground text-sm">{"|"}</span>
-    {LEGAL_LINKS.map(({ href, title }) => (
-      <Link
-        key={href}
-        href={href}
-        className="text-muted-foreground hover:text-foreground transition-colors"
-      >
-        {title}
-      </Link>
-    ))}
+    <span className="text-muted-foreground text-sm hidden sm:block">{"|"}</span>
+    <div className="flex flex-wrap items-center justify-center space-x-2">
+      {LEGAL_LINKS.map(({ href, title }) => (
+        <Link
+          key={href}
+          href={href}
+          className="text-muted-foreground hover:text-foreground transition-colors underline hover:no-underline"
+        >
+          {title}
+        </Link>
+      ))}
+    </div>
   </div>
 ));
 

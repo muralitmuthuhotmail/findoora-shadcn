@@ -14,10 +14,7 @@ const AuroraBackground = dynamic(
   { ssr: false },
 );
 const GlowingEffectDemo = dynamic(
-  () =>
-    import("@/components/blocks/hero/glowing-effect-demo").then(
-      (mod) => mod.GlowingEffectDemo,
-    ),
+  () => import("@/components/blocks/hero/features").then((mod) => mod.Features),
   { ssr: false },
 );
 
