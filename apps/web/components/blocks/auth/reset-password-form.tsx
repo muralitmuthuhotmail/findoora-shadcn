@@ -19,6 +19,7 @@ import {
   FormMessage,
 } from "@workspace/ui/components/form";
 import LoadingSpinner from "@/components/loading-spinner";
+import { Check, XCircle } from "lucide-react";
 
 // Form validation schema for reset password
 const resetPasswordSchema = z
@@ -147,20 +148,7 @@ export function ResetPasswordForm({
         >
           <div className="text-center space-y-4">
             <div className="mx-auto w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-              <svg
-                className="w-6 h-6 text-red-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <XCircle className="w-6 h-6 text-red-600" />
             </div>
             <div className="space-y-2">
               <p className="text-sm text-muted-foreground">
@@ -173,11 +161,11 @@ export function ResetPasswordForm({
           </div>
 
           <div className="space-y-3">
-            <Button asChild className="w-full">
+            <Button asChild className="w-full text-md" size={'lg'}>
               <Link href="/auth/forgot-password">Request new reset link</Link>
             </Button>
 
-            <Button asChild variant="outline" className="w-full">
+            <Button asChild variant="outline" className="w-full text-md" size={'lg'}>
               <Link href="/auth/login">Back to sign in</Link>
             </Button>
           </div>
@@ -197,20 +185,7 @@ export function ResetPasswordForm({
         >
           <div className="text-center space-y-4">
             <div className="mx-auto w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-              <svg
-                className="w-6 h-6 text-green-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+              <Check className="w-6 h-6 text-green-600" />
             </div>
             <div className="space-y-2">
               <p className="text-sm text-muted-foreground">
@@ -219,7 +194,7 @@ export function ResetPasswordForm({
             </div>
           </div>
 
-          <Button asChild className="w-full">
+          <Button asChild className="w-full text-md" size={'lg'}>
             <Link href="/auth/login">Continue to sign in</Link>
           </Button>
         </AuthCard>

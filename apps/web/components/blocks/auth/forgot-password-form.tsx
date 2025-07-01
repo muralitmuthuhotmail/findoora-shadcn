@@ -9,6 +9,7 @@ import { cn } from "@workspace/ui/lib/utils";
 import { AuthCard } from "@workspace/ui/components/ui/auth-card";
 import { Button } from "@workspace/ui/components/button";
 import { Input } from "@workspace/ui/components/input";
+import { CheckCircle } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -80,20 +81,7 @@ export function ForgotPasswordForm({
         >
           <div className="text-center space-y-4">
             <div className="mx-auto w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-              <svg
-                className="w-6 h-6 text-green-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+              <CheckCircle className="w-6 h-6 text-green-600" />
             </div>
             <div className="space-y-2">
               <p className="text-sm text-muted-foreground">
@@ -113,12 +101,13 @@ export function ForgotPasswordForm({
                 form.reset();
               }}
               variant="outline"
-              className="w-full"
+              className="w-full text-md" 
+              size={'lg'}
             >
               Try again
             </Button>
 
-            <Button asChild className="w-full">
+            <Button asChild className="w-full text-md" size={'lg'}>
               <Link href="/auth/login">Back to sign in</Link>
             </Button>
           </div>
