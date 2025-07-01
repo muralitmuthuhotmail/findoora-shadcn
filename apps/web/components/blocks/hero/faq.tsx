@@ -28,7 +28,7 @@ const FAQ = memo<FAQProps>(
         variant="fullscreen"
         spacing="normal"
         align="center"
-        className={cn(className)}
+        className={cn('w-full',className)}
         id="faq"
       >
         <SectionTwoColumn

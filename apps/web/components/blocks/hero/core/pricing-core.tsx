@@ -98,9 +98,9 @@ const PricingCard = ({
       className={cn(
         "relative flex flex-col rounded-2xl border p-8 transition-all",
         {
-          "bg-card border-primary shadow-2xl shadow-primary/10":
+          "bg-card border-primary sm:shadow-2xl sm:shadow-primary/10":
             plan.isRecommended,
-          "border-border bg-card/60": !plan.isRecommended,
+          "border-border bg-card/60 sm:scale-[0.95]": !plan.isRecommended,
         },
         className,
       )}

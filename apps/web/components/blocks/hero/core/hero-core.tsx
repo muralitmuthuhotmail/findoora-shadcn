@@ -109,7 +109,7 @@ const HeroMedia = ({ children, className, delay = 3 }: HeroMediaProps) => {
         duration: 0.5,
         delay,
       }}
-      className={`relative z-10 mt-20 rounded-3xl border border-border bg-muted p-4 shadow-md ${className || ""}`}
+      className={`relative z-5 mt-20 rounded-3xl border border-border bg-muted p-2 shadow-md ${className || ""}`}
     >
       {children}
     </motion.div>

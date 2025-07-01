@@ -18,6 +18,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@workspace/ui/components/form";
+import LoadingSpinner from "@/components/loading-spinner";
 
 // Form validation schema for reset password
 const resetPasswordSchema = z
@@ -129,7 +130,7 @@ export function ResetPasswordForm({
           description="Validating reset link..."
           contentClassName="flex justify-center py-8"
         >
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+          <LoadingSpinner />
         </AuthCard>
       </div>
     );
