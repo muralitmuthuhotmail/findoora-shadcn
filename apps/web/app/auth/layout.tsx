@@ -27,6 +27,7 @@ export default function AuthLayout({
 
   return (
     <>
+      <AuroraBackground className="fixed inset-0 z-[-1]" />
       <div className="flex h-full md:min-h-screen flex-col items-center justify-center bg-blur bg-card/50">
         <div className="hidden md:block">
           <Logo {...logoProps} />
