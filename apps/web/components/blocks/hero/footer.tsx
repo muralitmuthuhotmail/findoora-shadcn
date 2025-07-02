@@ -77,7 +77,7 @@ const CURRENT_YEAR = new Date().getFullYear();
 // Newsletter Section Component
 const NewsletterSection = memo(() => (
   <div className="lg:col-span-1">
-    <div className="max-w-md">
+    <div className="max-w-md justify-center mx-auto text-center lg:justify-start lg:text-left">
       <h2 className="text-xl font-semibold mb-2">Stay updated</h2>
       <p className="text-muted-foreground mb-6 text-sm">
         Subscribe to our newsletter for the latest updates.
@@ -96,8 +96,8 @@ NewsletterSection.displayName = "NewsletterSection";
 
 // Footer Links Section Component
 const FooterLinksSection = memo(() => (
-  <div className="lg:col-span-1 hidden sm:block">
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+  <div className="lg:col-span-2 hidden md:block">
+    <div className="grid grid-cols-4 gap-8">
       {FOOTER_SECTIONS.map((section) => (
         <div key={section.title} className="space-y-4">
           <h3 className="font-semibold text-foreground text-sm tracking-wide">
@@ -173,9 +173,9 @@ const SiteFooter = () => {
       <div className="max-w-7xl mx-auto">
         {/* Newsletter Section & Links Grid - Left-Right Layout */}
         <div className="py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <FooterLinksSection />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 ">
             <NewsletterSection />
+            <FooterLinksSection />
           </div>
         </div>
       </div>
