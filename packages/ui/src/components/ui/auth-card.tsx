@@ -29,7 +29,7 @@ function AuthCard({
   return (
     <Card
       className={cn(
-        "md:shadow-lg md:border md:border-border md:rounded-[28px] md:px-4 py-0 mb-4 md:mb-0 md:py-8 md:bg-card/40 md:backdrop-blur",
+        "md:shadow-sm md:border md:border-border md:rounded-[28px] md:px-4 py-0 mb-4 md:mb-0 md:py-8 md:bg-card/40 md:backdrop-blur",
         "bg-transparent border-0 shadow-none rounded-none",
         className,
       )}

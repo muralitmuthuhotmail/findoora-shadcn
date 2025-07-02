@@ -26,7 +26,7 @@ const loginSchema = z.object({
   password: z
     .string()
     .min(1, { message: "Password is required" })
-    .max(100, { message: "Password must be less than 100 characters" })
+    .max(100, { message: "Password must be less than 100 characters" }),
 });
 
 type LoginFormValues = z.infer<typeof loginSchema>;
@@ -142,7 +142,12 @@ export function EmailPasswordForm({
             )}
           />
 
-          <Button type="submit" className="w-full text-md" size={'lg'} disabled={isFormDisabled}>
+          <Button
+            type="submit"
+            className="w-full text-md"
+            size={"lg"}
+            disabled={isFormDisabled}
+          >
             {isLoading ? "Signing in..." : "Sign in"}
           </Button>
         </div>

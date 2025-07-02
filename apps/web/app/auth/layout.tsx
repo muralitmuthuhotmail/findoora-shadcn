@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar";
 import LoadingSpinner from "@/components/loading-spinner";
 import { Suspense } from "react";
 import dynamic from "next/dynamic";
+import Logo from "@/components/logo";
 
 const AuroraBackground = dynamic(() =>
   import("@workspace/ui/components/ui/aurora-background").then(
@@ -16,10 +17,18 @@ export default function AuthLayout({
 }>) {
   return (
     <>
-      <Navbar/>
-      <div className="relative md:absolute top-0 w-full flex h-full md:min-h-screen flex-col items-center justify-center bg-blur bg-card/50">
-        {/* <AuroraBackground className="fixed inset-0 z-[-1] sm:block hidden" /> */}
-        <div className="flex w-full sm:max-w-md flex-col gap-6 mt-5">
+      {/* <Navbar hasBlur={false} className="bg-transparent border-b-0"/> */}
+      <div className="flex h-full md:min-h-screen flex-col items-center justify-center bg-blur bg-card/50">
+        <Logo
+          asLink
+          href="/"
+          text="findoora"
+          textClassName="font-bold"
+          className="py-4 flex justify-center item-center"
+          size="md"
+          iconVariant="secondary"
+        />
+        <div className="flex w-full sm:max-w-md flex-col gap-6">
           <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>
         </div>
       </div>

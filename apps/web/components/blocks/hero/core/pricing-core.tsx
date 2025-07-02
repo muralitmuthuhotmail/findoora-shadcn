@@ -164,10 +164,7 @@ const PricingGrid = ({
 }: PricingGridProps) => {
   return (
     <div
-      className={cn(
-        "w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-8",
-        className,
-      )}
+      className={cn("w-full grid grid-cols-1 md:grid-cols-3 gap-8", className)}
     >
       {plans.map((plan) => (
         <PricingCard

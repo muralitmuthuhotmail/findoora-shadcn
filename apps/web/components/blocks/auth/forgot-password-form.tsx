@@ -101,13 +101,13 @@ export function ForgotPasswordForm({
                 form.reset();
               }}
               variant="outline"
-              className="w-full text-md" 
-              size={'lg'}
+              className="w-full text-md"
+              size={"lg"}
             >
               Try again
             </Button>
 
-            <Button asChild className="w-full text-md" size={'lg'}>
+            <Button asChild className="w-full text-md" size={"lg"}>
               <Link href="/auth/login">Back to sign in</Link>
             </Button>
           </div>
@@ -155,7 +155,12 @@ export function ForgotPasswordForm({
               )}
             />
 
-            <Button type="submit" className="w-full text-md" size={'lg'} disabled={isFormDisabled}>
+            <Button
+              type="submit"
+              className="w-full text-md"
+              size={"lg"}
+              disabled={isFormDisabled}
+            >
               {isLoading ? "Sending reset link..." : "Send reset link"}
             </Button>
           </form>

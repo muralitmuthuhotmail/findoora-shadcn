@@ -161,11 +161,16 @@ export function ResetPasswordForm({
           </div>
 
           <div className="space-y-3">
-            <Button asChild className="w-full text-md" size={'lg'}>
+            <Button asChild className="w-full text-md" size={"lg"}>
               <Link href="/auth/forgot-password">Request new reset link</Link>
             </Button>
 
-            <Button asChild variant="outline" className="w-full text-md" size={'lg'}>
+            <Button
+              asChild
+              variant="outline"
+              className="w-full text-md"
+              size={"lg"}
+            >
               <Link href="/auth/login">Back to sign in</Link>
             </Button>
           </div>
@@ -194,7 +199,7 @@ export function ResetPasswordForm({
             </div>
           </div>
 
-          <Button asChild className="w-full text-md" size={'lg'}>
+          <Button asChild className="w-full text-md" size={"lg"}>
             <Link href="/auth/login">Continue to sign in</Link>
           </Button>
         </AuthCard>
@@ -266,7 +271,12 @@ export function ResetPasswordForm({
               />
             </div>
 
-            <Button type="submit" className="w-full text-md" size={'lg'} disabled={isFormDisabled}>
+            <Button
+              type="submit"
+              className="w-full text-md"
+              size={"lg"}
+              disabled={isFormDisabled}
+            >
               {isLoading ? "Updating password..." : "Update password"}
             </Button>
           </form>

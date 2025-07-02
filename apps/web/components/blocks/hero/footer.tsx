@@ -96,8 +96,8 @@ NewsletterSection.displayName = "NewsletterSection";
 
 // Footer Links Section Component
 const FooterLinksSection = memo(() => (
-  <div className="lg:col-span-2 hidden sm:block">
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+  <div className="lg:col-span-1 hidden sm:block">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
       {FOOTER_SECTIONS.map((section) => (
         <div key={section.title} className="space-y-4">
           <h3 className="font-semibold text-foreground text-sm tracking-wide">

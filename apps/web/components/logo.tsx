@@ -174,7 +174,7 @@ export interface LogoProps extends React.HTMLAttributes<HTMLElement> {
 export const Logo = forwardRef<HTMLElement, LogoProps>(
   (
     {
-      text = "Findoora Inc.",
+      text = "findoora",
       hideText = false,
       icon: IconComponent = GalleryVerticalEnd,
       size = "sm",

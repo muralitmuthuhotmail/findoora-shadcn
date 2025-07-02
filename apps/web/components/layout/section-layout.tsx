@@ -99,6 +99,8 @@ const SectionHeader = ({
       "text-right": align === "right",
     },
     className,
+    // Navbar-like sticky style
+    // "sticky top-12 z-30 bg-background/80 backdrop-blur border-b border-border py-4"
   );
 
   const titleClasses = cn(
