@@ -145,7 +145,7 @@ const PricingCard = ({
 
       <Button
         variant={plan.isRecommended ? "default" : "outline"}
-        className="w-full mt-6 rounded-full font-semibold py-5 text-base transition-all duration-300 hover:-translate-y-0.5"
+        className="w-full mt-6 font-semibold py-5 text-base transition-all duration-300 hover:-translate-y-0.5"
         onClick={() => onGetStarted(plan.name)}
       >
         Get Started
