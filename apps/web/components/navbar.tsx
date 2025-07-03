@@ -113,7 +113,7 @@ const Navbar = memo<NavbarProps>(
       padding.y,
       hasBlur && "backdrop-blur-md",
       isSticky && "sticky top-0",
-      "z-50 bg-card/50 border-b border-border/40",
+      "z-50 border-b border-border/40",
       "transition-all duration-200",
       className,
     );

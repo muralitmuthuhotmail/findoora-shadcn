@@ -8,13 +8,13 @@ import FAQ from "@/components/blocks/hero/faq";
 import SiteFooter from "@/components/blocks/hero/footer";
 import Features01 from "@/components/blocks/hero/features-01";
 import { cn } from "@workspace/ui/lib/utils";
-const AuroraBackground = dynamic(
-  () =>
-    import("@workspace/ui/components/ui/aurora-background").then(
-      (mod) => mod.AuroraBackground,
-    ),
-  { ssr: false },
-);
+// const AuroraBackground = dynamic(
+//   () =>
+//     import("@workspace/ui/components/ui/aurora-background").then(
+//       (mod) => mod.AuroraBackground,
+//     ),
+//   { ssr: false },
+// );
 const Features = dynamic(
   () => import("@/components/blocks/hero/features").then((mod) => mod.Features),
   { ssr: false },
@@ -24,9 +24,9 @@ export default function Page() {
   const maxWidth = "7xl"; // You can change this to "full" or any other value as needed
   return (
     <>
+      {/* <AuroraBackground className="fixed inset-0 z-[-1] sm:block hidden" /> */}
       <Navbar />
-      <AuroraBackground className="fixed inset-0 z-[-1] sm:block hidden" />
-      <div className="backdrop-blur bg-card/50 flex w-full items-center justify-center px-4 py-3">
+      <div className="backdrop-blur flex w-full items-center justify-center px-4 py-3">
         <div
           className={cn(
             "flex flex-col items-center justify-center w-full mx-auto",

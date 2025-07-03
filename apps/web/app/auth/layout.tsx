@@ -4,11 +4,11 @@ import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import Logo, { LogoProps } from "@/components/logo";
 
-const AuroraBackground = dynamic(() =>
-  import("@workspace/ui/components/ui/aurora-background").then(
-    (mod) => mod.AuroraBackground,
-  ),
-);
+// const AuroraBackground = dynamic(() =>
+//   import("@workspace/ui/components/ui/aurora-background").then(
+//     (mod) => mod.AuroraBackground,
+//   ),
+// );
 
 export default function AuthLayout({
   children,
@@ -27,8 +27,8 @@ export default function AuthLayout({
 
   return (
     <>
-      <AuroraBackground className="fixed inset-0 z-[-1]" />
-      <div className="flex h-full md:min-h-screen flex-col items-center justify-center bg-blur bg-card/50">
+      {/* <AuroraBackground className="fixed inset-0 z-[-1] hidden md:block" /> */}
+      <div className="flex h-full md:min-h-screen flex-col items-center justify-center bg-blur">
         <div className="hidden md:block">
           <Logo {...logoProps} />
         </div>
@@ -39,7 +39,7 @@ export default function AuthLayout({
           showThemeToggle={false}
         />
         <div className="flex w-full sm:max-w-md flex-col gap-6">
-          <Suspense fallback={<LoadingSpinner />}>{children}</Suspense>
+          {children}
         </div>
       </div>
     </>
