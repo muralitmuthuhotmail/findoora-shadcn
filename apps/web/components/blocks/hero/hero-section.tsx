@@ -32,7 +32,7 @@ export default function HeroSectionOne() {
         <AnimatedDescription
           text="Discover, compare, and choose the right SaaS products for your needs. Findoora helps you make informed decisions with trusted reviews and insights."
           className="mt-4 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto"
-          delay={2}
+          delay={1.5}
         />
 
         <HeroCTA
@@ -47,7 +47,7 @@ export default function HeroSectionOne() {
           }}
         />
 
-        <HeroMedia>
+        <HeroMedia delay={2}>
           <div className="w-full overflow-hidden rounded-xl border border-border">
             <div className="aspect-[16/9] h-auto w-full object-cover backdrop-blur" />
           </div>

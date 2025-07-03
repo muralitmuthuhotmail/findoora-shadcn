@@ -41,8 +41,8 @@ const AnimatedTitle = ({ text, className, delay = 0 }: AnimatedTitleProps) => {
           initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
           animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           transition={{
-            duration: 0.5,
-            delay: index * 0.2 + delay,
+            duration: 0.4,
+            delay: index * 0.15 + delay,
             ease: "easeInOut",
           }}
           className="mr-2 inline-block text-primary"

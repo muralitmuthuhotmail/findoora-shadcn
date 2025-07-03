@@ -1,30 +1,30 @@
 "use client";
 import dynamic from "next/dynamic";
-import HeroSectionOne from "@/components/blocks/hero/hero-section";
 import Navbar from "@/components/navbar";
-import Pricing from "@/components/blocks/hero/pricing";
-import Testimonial from "@/components/blocks/hero/testimonial";
-import FAQ from "@/components/blocks/hero/faq";
-import SiteFooter from "@/components/blocks/hero/footer";
-import Features01 from "@/components/blocks/hero/features-01";
 import { cn } from "@workspace/ui/lib/utils";
-// const AuroraBackground = dynamic(
-//   () =>
-//     import("@workspace/ui/components/ui/aurora-background").then(
-//       (mod) => mod.AuroraBackground,
-//     ),
-//   { ssr: false },
-// );
+import { AnimatedComponent } from "@/components/blocks/hero/animated-component";
+
+const HeroSectionOne = dynamic(
+  () => import("@/components/blocks/hero/hero-section"),
+);
 const Features = dynamic(
   () => import("@/components/blocks/hero/features").then((mod) => mod.Features),
   { ssr: false },
 );
+const Features01 = dynamic(
+  () => import("@/components/blocks/hero/features-01"),
+);
+const Pricing = dynamic(() => import("@/components/blocks/hero/pricing"));
+const Testimonial = dynamic(
+  () => import("@/components/blocks/hero/testimonial"),
+);
+const FAQ = dynamic(() => import("@/components/blocks/hero/faq"));
+const SiteFooter = dynamic(() => import("@/components/blocks/hero/footer"));
 
 export default function Page() {
-  const maxWidth = "7xl"; // You can change this to "full" or any other value as needed
+  const maxWidth = "7xl";
   return (
     <>
-      {/* <AuroraBackground className="fixed inset-0 z-[-1] sm:block hidden" /> */}
       <Navbar />
       <div className="backdrop-blur flex w-full items-center justify-center px-4 py-3">
         <div
@@ -34,12 +34,24 @@ export default function Page() {
             "gap-4",
           )}
         >
-          <HeroSectionOne />
-          <Features />
-          <Features01 />
-          <Pricing />
-          <Testimonial />
-          <FAQ />
+          <AnimatedComponent>
+            <HeroSectionOne />
+          </AnimatedComponent>
+          <AnimatedComponent delay={0.1}>
+            <Features />
+          </AnimatedComponent>
+          <AnimatedComponent delay={0.2}>
+            <Features01 />
+          </AnimatedComponent>
+          <AnimatedComponent delay={0.3}>
+            <Pricing />
+          </AnimatedComponent>
+          <AnimatedComponent delay={0.4}>
+            <Testimonial />
+          </AnimatedComponent>
+          <AnimatedComponent delay={0.5}>
+            <FAQ />
+          </AnimatedComponent>
         </div>
       </div>
       <SiteFooter />
