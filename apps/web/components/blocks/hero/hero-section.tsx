@@ -49,7 +49,7 @@ export default function HeroSectionOne() {
 
         <HeroMedia>
           <div className="w-full overflow-hidden rounded-xl border border-border">
-            <div className="aspect-[16/9] h-auto w-full object-cover backdrop-blur bg-card/50" />
+            <div className="aspect-[16/9] h-auto w-full object-cover backdrop-blur" />
           </div>
         </HeroMedia>
       </SectionContent>

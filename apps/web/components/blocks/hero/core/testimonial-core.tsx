@@ -84,7 +84,7 @@ const TestimonialCard = ({
 
   return (
     <CardWrapper {...animationProps} className={className}>
-      <Card className="flex flex-col h-full">
+      <Card className="flex flex-col h-full bg-card">
         <CardHeader>
           <StarRating rating={testimonial.rating} />
         </CardHeader>

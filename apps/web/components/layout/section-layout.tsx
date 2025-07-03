@@ -66,8 +66,8 @@ const SectionLayout = forwardRef<HTMLElement, SectionLayoutProps>(
       // Background styles
       {
         "bg-transparent": background === "transparent",
-        "bg-card/50": background === "card",
-        "bg-muted/50": background === "muted",
+        "bg-card": background === "card",
+        "bg-muted": background === "muted",
       },
       className,
     );
