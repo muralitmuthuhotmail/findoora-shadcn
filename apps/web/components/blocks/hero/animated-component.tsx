@@ -1,4 +1,5 @@
 "use client";
+import { appConfig } from "@/app/app-config";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -50,8 +51,11 @@ export function AnimatedComponent({
 }: AnimatedComponentProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
   const variants = animationVariants[animationType];
+
+  if(appConfig.transition === false) {
+    return children;
+  }
 
   return (
     <motion.div
@@ -59,7 +63,7 @@ export function AnimatedComponent({
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={variants}
-      transition={{ duration: 0.5, delay }}
+      transition={{ duration: appConfig.transitionDuration, delay }}
       className={className}
     >
       {children}

@@ -1,7 +1,10 @@
+"use client";
 import Navbar from "@/components/navbar";
 import Logo, { LogoProps } from "@workspace/ui/components/logo";
 import { AnimatedComponent } from "@/components/blocks/hero/animated-component";
 import { appConfig } from "../app-config";
+import { useId } from "react";
+import { usePathname } from "next/navigation";
 
 export default function AuthLayout({
   children,
@@ -17,6 +20,7 @@ export default function AuthLayout({
     size: "md" as const,
     iconVariant: "secondary",
   } as LogoProps;
+  const pathname = usePathname();
 
   return (
     <>
@@ -33,8 +37,10 @@ export default function AuthLayout({
           authButton={{ text: "Need help?", variant: "link", href: "/" }}
           showThemeToggle={false}
         />
-        <div className="flex w-full sm:max-w-md flex-col gap-6">
-          <AnimatedComponent delay={0.03}>{children}</AnimatedComponent>
+        <div className="flex w-full sm:max-w-md flex-col gap-6 h-hull" id={useId()}>
+          <AnimatedComponent key={pathname}>
+            {children}
+          </AnimatedComponent>
         </div>
       </div>
     </>
