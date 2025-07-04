@@ -52,7 +52,6 @@ export function Features() {
     <SectionLayout variant="fullscreen" spacing="normal" align="center">
       <SectionContent maxWidth="full" className="space-y-14">
         <SectionHeader title="Features" />
-
         <FeatureGrid features={FEATURES} showGlowEffect={true} />
       </SectionContent>
     </SectionLayout>

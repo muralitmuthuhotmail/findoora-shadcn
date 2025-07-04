@@ -7,10 +7,6 @@ import { AnimatedComponent } from "@/components/blocks/hero/animated-component";
 const HeroSectionOne = dynamic(
   () => import("@/components/blocks/hero/hero-section"),
 );
-const Features = dynamic(
-  () => import("@/components/blocks/hero/features").then((mod) => mod.Features),
-  { ssr: false },
-);
 const Features01 = dynamic(
   () => import("@/components/blocks/hero/features-01"),
 );
@@ -36,9 +32,6 @@ export default function Page() {
         >
           <AnimatedComponent>
             <HeroSectionOne />
-          </AnimatedComponent>
-          <AnimatedComponent delay={0.1}>
-            <Features />
           </AnimatedComponent>
           <AnimatedComponent delay={0.2}>
             <Features01 />

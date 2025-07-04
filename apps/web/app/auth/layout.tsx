@@ -1,15 +1,7 @@
 import Navbar from "@/components/navbar";
-import LoadingSpinner from "@/components/loading-spinner";
-import { Suspense } from "react";
-import dynamic from "next/dynamic";
 import Logo, { LogoProps } from "@/components/logo";
 import { AnimatedComponent } from "@/components/blocks/hero/animated-component";
 
-// const AuroraBackground = dynamic(() =>
-//   import("@workspace/ui/components/ui/aurora-background").then(
-//     (mod) => mod.AuroraBackground,
-//   ),
-// );
 
 export default function AuthLayout({
   children,
@@ -28,13 +20,10 @@ export default function AuthLayout({
 
   return (
     <>
-      {/* <AuroraBackground className="fixed inset-0 z-[-1] hidden md:block" /> */}
       <div className="flex h-full md:min-h-screen flex-col items-center justify-center bg-blur">
-        <AnimatedComponent delay={0.1}>
-          <div className="hidden md:block">
+        <div className="hidden md:block sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm">
             <Logo {...logoProps} />
-          </div>
-        </AnimatedComponent>
+        </div>
         <Navbar
           hasBlur={true}
           className="md:hidden mb-6"
@@ -42,7 +31,7 @@ export default function AuthLayout({
           showThemeToggle={false}
         />
         <div className="flex w-full sm:max-w-md flex-col gap-6">
-          <AnimatedComponent delay={0.1}>
+          <AnimatedComponent delay={0.03}>
             {children}
           </AnimatedComponent>
         </div>

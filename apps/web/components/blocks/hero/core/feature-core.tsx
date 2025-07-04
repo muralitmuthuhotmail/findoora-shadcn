@@ -133,18 +133,18 @@ const SimpleFeatureGrid = ({
   return (
     <div className={`grid ${gridClasses[columns]} gap-8 ${className || ""}`}>
       {features.map((feature) => (
-        <div
-          key={feature.id}
-          className="flex flex-col items-center text-center space-y-4 p-6 rounded-xl border bg-card"
-        >
-          <div className="w-fit rounded-lg border border-gray-600 p-3">
-            {feature.icon}
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-xl font-semibold">{feature.title}</h3>
-            <div className="text-muted-foreground">{feature.description}</div>
-          </div>
+      <div
+        key={feature.id}
+        className="flex flex-col items-center text-center space-y-4 p-6 rounded-xl border bg-card dark:bg-card"
+      >
+        <div className="w-fit rounded-lg border border-border p-3">
+        {feature.icon}
         </div>
+        <div className="space-y-2">
+        <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
+        <div className="text-muted-foreground">{feature.description}</div>
+        </div>
+      </div>
       ))}
     </div>
   );
