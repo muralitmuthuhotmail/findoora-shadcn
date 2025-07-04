@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import Logo, { LogoProps } from "@workspace/ui/components/logo";
 import { AnimatedComponent } from "@/components/blocks/hero/animated-component";
+import { appConfig } from "../app-config";
 
 export default function AuthLayout({
   children,
@@ -26,6 +27,7 @@ export default function AuthLayout({
           </div>
         </AnimatedComponent>
         <Navbar
+          maxWidth={appConfig.maxWidth}
           hasBlur={true}
           className="md:hidden mb-6"
           authButton={{ text: "Need help?", variant: "link", href: "/" }}
