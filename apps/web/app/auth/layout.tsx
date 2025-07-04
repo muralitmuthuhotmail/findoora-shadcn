@@ -19,8 +19,8 @@ export default function AuthLayout({
 
   return (
     <>
-      <div className="flex h-full md:min-h-screen flex-col items-center justify-center bg-blur">
-        <div className="hidden md:block sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm">
+      <div className="flex h-full md:min-h-screen flex-col items-center justify-center">
+        <div className="hidden md:block sticky top-0 z-50 w-full">
           <Logo {...logoProps} />
         </div>
         <Navbar
