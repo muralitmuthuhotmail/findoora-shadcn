@@ -20,9 +20,11 @@ export default function AuthLayout({
   return (
     <>
       <div className="flex h-full md:min-h-screen flex-col items-center justify-center">
-        <div className="hidden md:block sticky top-0 z-50 w-full">
-          <Logo {...logoProps} />
-        </div>
+        <AnimatedComponent delay={0.5} animationType="fade">
+          <div className="hidden md:block sticky top-0 z-50 w-full">
+            <Logo {...logoProps} />
+          </div>
+        </AnimatedComponent>
         <Navbar
           hasBlur={true}
           className="md:hidden mb-6"

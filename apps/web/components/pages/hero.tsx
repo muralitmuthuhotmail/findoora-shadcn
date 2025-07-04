@@ -19,7 +19,9 @@ export default function HeroPage() {
   const sections = [<Features01 />, <Pricing />, <Testimonial />, <FAQ />];
   return (
     <>
-      <Navbar />
+      <AnimatedComponent animationType="slideDown" delay={1.5}>
+        <Navbar />
+      </AnimatedComponent>
       <div className="backdrop-blur flex w-full items-center justify-center px-4 py-3">
         <div
           className={cn(
