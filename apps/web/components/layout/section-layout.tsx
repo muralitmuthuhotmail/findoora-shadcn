@@ -98,7 +98,7 @@ const SectionHeader = ({
       "text-center": align === "center",
       "text-right": align === "right",
     },
-    className
+    className,
   );
 
   const titleClasses = cn(

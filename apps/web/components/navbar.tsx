@@ -66,7 +66,7 @@ export interface NavbarProps extends React.HTMLAttributes<HTMLElement> {
     | "6xl"
     | "7xl"
     | "full"
-    |string;
+    | string;
 
   /**
    * Custom padding

@@ -1,6 +1,6 @@
 "use client";
 import { appConfig } from "@/app/app-config";
-import { motion, useInView } from "framer-motion";
+import { motion, scale, useInView } from "framer-motion";
 import { useRef } from "react";
 
 interface AnimatedComponentProps {
@@ -18,27 +18,27 @@ interface AnimatedComponentProps {
 
 const animationVariants = {
   fade: {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
+    hidden: { opacity: 0, scale: 0.98 },
+    visible: { opacity: 1, scale: 1 },
   },
   slideUp: {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 40, scale: 0.98 },
+    visible: { opacity: 1, y: 0, scale: 1 },
   },
   slideDown: {
-    hidden: { opacity: 0, y: -40 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: -40, scale: 0.98 },
+    visible: { opacity: 1, y: 0, scale: 1 },
   },
   slideLeft: {
-    hidden: { opacity: 0, x: 40 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: 40, scale: 0.98 },
+    visible: { opacity: 1, x: 0, scale: 1 },
   },
   slideRight: {
-    hidden: { opacity: 0, x: -40 },
-    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -40, scale: 0.98 },
+    visible: { opacity: 1, x: 0, scale: 1 },
   },
   scale: {
-    hidden: { opacity: 0, scale: 0.95 },
+    hidden: { opacity: 0, scale: 0.98 },
     visible: { opacity: 1, scale: 1 },
   },
 };
@@ -53,7 +53,7 @@ export function AnimatedComponent({
   const isInView = useInView(ref, { once: true });
   const variants = animationVariants[animationType];
 
-  if(appConfig.transition === false) {
+  if (appConfig.transition === false) {
     return children;
   }
 

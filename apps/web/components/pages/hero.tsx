@@ -9,18 +9,22 @@ import { appConfig } from "@/app/app-config";
 const HeroSectionOne = lazy(
   () => import("@/components/blocks/hero/hero-section"),
 );
-const Features01 = lazy(() => import("@/components/blocks/hero/features-01"));
+const Features = lazy(() => import("@/components/blocks/hero/features"));
 const Pricing = lazy(() => import("@/components/blocks/hero/pricing"));
 const Testimonial = lazy(() => import("@/components/blocks/hero/testimonial"));
 const FAQ = lazy(() => import("@/components/blocks/hero/faq"));
 const SiteFooter = lazy(() => import("@/components/blocks/hero/footer"));
 
 export default function HeroPage() {
-  const sections = [<Features01 />, <Pricing />, <Testimonial />, <FAQ />];
+  const sections = [<Features />, <Pricing />, <Testimonial />, <FAQ />];
   return (
     <>
-      <AnimatedComponent animationType="slideDown" delay={1.5} className="sticky top-0 z-50">
-        <Navbar maxWidth={appConfig.maxWidth} isSticky/>
+      <AnimatedComponent
+        animationType="slideDown"
+        delay={1.5}
+        className="sticky top-0 z-50"
+      >
+        <Navbar maxWidth={appConfig.maxWidth} isSticky />
       </AnimatedComponent>
       <div className="backdrop-blur flex w-full items-center justify-center px-4 py-3">
         <div

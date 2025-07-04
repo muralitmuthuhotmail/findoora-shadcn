@@ -37,10 +37,11 @@ export default function AuthLayout({
           authButton={{ text: "Need help?", variant: "link", href: "/" }}
           showThemeToggle={false}
         />
-        <div className="flex w-full sm:max-w-md flex-col gap-6 h-hull" id={useId()}>
-          <AnimatedComponent key={pathname}>
-            {children}
-          </AnimatedComponent>
+        <div
+          className="flex w-full sm:max-w-md flex-col gap-6 h-hull"
+          id={useId()}
+        >
+          <AnimatedComponent key={pathname}>{children}</AnimatedComponent>
         </div>
       </div>
     </>

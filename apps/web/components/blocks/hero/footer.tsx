@@ -84,9 +84,7 @@ const NewsletterSection = memo(() => (
       </p>
       <form className="flex gap-2">
         <Input type="email" placeholder="Enter your email" className="flex-2" />
-        <Button type="submit">
-          Subscribe
-        </Button>
+        <Button type="submit">Subscribe</Button>
       </form>
     </div>
   </div>
