@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@workspace/ui/components/button";
-import Logo, { type LogoProps } from "@/components/logo";
+import Logo, { LogoProps } from "@workspace/ui/components/logo";
 import SwitchMode from "@workspace/ui/components/ui/mode-switch";
 import { cn } from "@workspace/ui/lib/utils";
 import { useRouter } from "next/navigation";

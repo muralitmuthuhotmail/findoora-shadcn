@@ -2,7 +2,7 @@ import { Button } from "@workspace/ui/components/button";
 import { Input } from "@workspace/ui/components/input";
 import { Separator } from "@workspace/ui/components/separator";
 import Link from "next/link";
-import Logo from "@/components/logo";
+import Logo from "@workspace/ui/components/logo";
 import { FaTwitter, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import { memo } from "react";
 

@@ -18,7 +18,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@workspace/ui/components/form";
-import LoadingSpinner from "@/components/loading-spinner";
+import { LoadingSpinner } from "@workspace/ui/components/loading-spinner";
 import { Check, XCircle } from "lucide-react";
 
 // Form validation schema for reset password

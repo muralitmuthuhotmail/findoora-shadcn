@@ -1,5 +1,5 @@
 import Navbar from "@/components/navbar";
-import Logo, { LogoProps } from "@/components/logo";
+import Logo, { LogoProps } from "@workspace/ui/components/logo";
 import { AnimatedComponent } from "@/components/blocks/hero/animated-component";
 
 export default function AuthLayout({
