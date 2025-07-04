@@ -78,13 +78,13 @@ const CURRENT_YEAR = new Date().getFullYear();
 const NewsletterSection = memo(() => (
   <div className="lg:col-span-1">
     <div className="max-w-md justify-center mx-auto text-center lg:justify-start lg:text-left">
-      <h2 className="text-xl font-semibold mb-2">Stay updated</h2>
+      <h2 className="text-lg font-semibold mb-2">Stay updated</h2>
       <p className="text-muted-foreground mb-6 text-sm">
         Subscribe to our newsletter for the latest updates.
       </p>
       <form className="flex gap-2">
-        <Input type="email" placeholder="Enter your email" className="flex-1" />
-        <Button type="submit" className="px-6">
+        <Input type="email" placeholder="Enter your email" className="flex-2" />
+        <Button type="submit">
           Subscribe
         </Button>
       </form>
