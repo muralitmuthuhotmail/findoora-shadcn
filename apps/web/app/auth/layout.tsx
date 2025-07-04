@@ -2,7 +2,6 @@ import Navbar from "@/components/navbar";
 import Logo, { LogoProps } from "@/components/logo";
 import { AnimatedComponent } from "@/components/blocks/hero/animated-component";
 
-
 export default function AuthLayout({
   children,
 }: Readonly<{
@@ -22,7 +21,7 @@ export default function AuthLayout({
     <>
       <div className="flex h-full md:min-h-screen flex-col items-center justify-center bg-blur">
         <div className="hidden md:block sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm">
-            <Logo {...logoProps} />
+          <Logo {...logoProps} />
         </div>
         <Navbar
           hasBlur={true}
@@ -31,9 +30,7 @@ export default function AuthLayout({
           showThemeToggle={false}
         />
         <div className="flex w-full sm:max-w-md flex-col gap-6">
-          <AnimatedComponent delay={0.03}>
-            {children}
-          </AnimatedComponent>
+          <AnimatedComponent delay={0.03}>{children}</AnimatedComponent>
         </div>
       </div>
     </>
