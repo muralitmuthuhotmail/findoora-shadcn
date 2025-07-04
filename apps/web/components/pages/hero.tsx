@@ -19,8 +19,8 @@ export default function HeroPage() {
   const sections = [<Features01 />, <Pricing />, <Testimonial />, <FAQ />];
   return (
     <>
-      <AnimatedComponent animationType="slideDown" delay={1.5}>
-        <Navbar maxWidth={appConfig.maxWidth}/>
+      <AnimatedComponent animationType="slideDown" delay={1.5} className="sticky top-0 z-50">
+        <Navbar maxWidth={appConfig.maxWidth} isSticky/>
       </AnimatedComponent>
       <div className="backdrop-blur flex w-full items-center justify-center px-4 py-3">
         <div
