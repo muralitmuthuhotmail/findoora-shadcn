@@ -8,7 +8,7 @@ import {
   SectionContent,
 } from "@/components/layout";
 
-const Features01 = () => {
+const Features = () => {
   return (
     <SectionLayout variant="fullscreen" spacing="normal" align="center">
       <SectionContent maxWidth="full" className="space-y-14">
@@ -99,4 +99,4 @@ const Features01 = () => {
   );
 };
 
-export default Features01;
+export default Features;
