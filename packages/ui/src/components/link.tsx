@@ -12,7 +12,7 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
         {children}
       </Comp>
     );
-  }
+  },
 );
 
 Link.displayName = "Link";

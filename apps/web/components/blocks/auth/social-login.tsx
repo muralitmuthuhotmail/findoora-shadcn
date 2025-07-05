@@ -29,9 +29,12 @@ interface SocialLoginProps {
   onProviderClick?: (provider: SocialProvider) => void;
 }
 
-const iconClassName="!h-[18px] !w-[18px]";
+const iconClassName = "!h-[18px] !w-[18px]";
 
-const providerIcons: Record<SocialProvider, React.ReactElement<{ className?: string }>> = {
+const providerIcons: Record<
+  SocialProvider,
+  React.ReactElement<{ className?: string }>
+> = {
   google: <FaGoogle className={iconClassName} />,
   facebook: <FaFacebook className={iconClassName} />,
   apple: <FaApple className={iconClassName} />,
@@ -40,7 +43,6 @@ const providerIcons: Record<SocialProvider, React.ReactElement<{ className?: str
   microsoft: <FaMicrosoft className={iconClassName} />,
   yahoo: <FaYahoo className={iconClassName} />,
 };
-
 
 const providerLabels: Record<SocialProvider, string> = {
   google: "Google",
@@ -53,7 +55,7 @@ const providerLabels: Record<SocialProvider, string> = {
 };
 
 export function SocialLogin({
-  providers = ["google", "apple", "facebook"],
+  providers = ["google", "apple", "facebook", "twitter", "github", "microsoft"],
   onLoading,
   disabled,
   onProviderClick,

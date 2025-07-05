@@ -5,6 +5,10 @@
 
 @import "tw-animate-css";
 
-@import "./theme.css";
+@import "./themes/default/root.css";
+@import "./themes/default/dark.css";
+@import "./themes/default/inline.css";
+
 @import "./base.css";
 @import "./animations.css";
+

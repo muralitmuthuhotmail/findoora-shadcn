@@ -35,7 +35,11 @@ export default function AuthLayout({
           maxWidth={appConfig.maxWidth}
           hasBlur={true}
           className="md:hidden mb-6"
-          authButton={{ text: "Need help?", variant: "link", href: routes.home }}
+          authButton={{
+            text: "Need help?",
+            variant: "link",
+            href: routes.home,
+          }}
           showThemeToggle={false}
         />
         <div

@@ -122,7 +122,8 @@ export function EmailPasswordForm({
                   <FormLabel>Password</FormLabel>
                   <Link
                     href={routes.forgotPassword}
-                    className="text-sm text-primary underline-offset-4 hover:underline">
+                    className="text-sm text-primary underline-offset-4 hover:underline"
+                  >
                     Forgot password?
                   </Link>
                 </div>
@@ -146,7 +147,8 @@ export function EmailPasswordForm({
             type="submit"
             className="w-full text-md"
             size={"lg"}
-            disabled={isFormDisabled}>
+            disabled={isFormDisabled}
+          >
             {isLoading ? "Signing in..." : "Sign in"}
           </Button>
         </div>
