@@ -29,14 +29,14 @@ function AuthCard({
   return (
     <Card
       className={cn(
-        "md:shadow-sm md:border md:border-border md:rounded-[28px] md:px-4 py-0 mb-4 md:mb-0 md:py-8 md:bg-card",
+        "md:shadow-sm md:border md:border-border md:rounded-[28px] md:px-1 py-0 mb-4 md:mb-0 md:py-6 md:bg-card",
         "bg-transparent border-0 shadow-none rounded-none",
         className,
       )}
       {...props}
     >
       <CardHeader className={cn("text-center", headerClassName)}>
-        <CardTitle className="mt-1 text-xl md:text-2xl font-semibold tracking-tighter">
+        <CardTitle className="mt-1 text-xl md:text-2xl font-semibold">
           {title}
         </CardTitle>
         <CardDescription className="mt-2 w-full text-sm md:text-md text-muted-foreground mx-auto">

@@ -1,5 +1,6 @@
 "use client";
 
+import { routes } from "@/app/routes";
 import { Button } from "@workspace/ui/components/button";
 import Logo, { LogoProps } from "@workspace/ui/components/logo";
 import SwitchMode from "@workspace/ui/components/ui/mode-switch";
@@ -100,7 +101,7 @@ const Navbar = memo<NavbarProps>(
     } = authButton;
 
     // Destructure logo props with defaults
-    const { href: logoHref = "/", ...logoProps } = logo;
+    const { href: logoHref = routes.home, ...logoProps } = logo;
 
     // Handle auth button click
     const handleAuthClick = useCallback(() => {

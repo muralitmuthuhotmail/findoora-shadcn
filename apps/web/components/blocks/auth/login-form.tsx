@@ -6,6 +6,7 @@ import { cn } from "@workspace/ui/lib/utils";
 import { AuthCard } from "@workspace/ui/components/ui/auth-card";
 import { SocialLogin } from "@/components/blocks/auth/social-login";
 import { EmailPasswordForm } from "@/components/blocks/auth/email-password-form";
+import { routes } from "@/app/routes";
 
 export function LoginForm({
   className,
@@ -47,14 +48,14 @@ export function LoginForm({
         By clicking continue, you agree to our{"  "}
         <div>
           <Link
-            href="/terms"
+            href={routes.terms}
             className="underline underline-offset-4 hover:text-primary"
           >
             Terms of Service
           </Link>{" "}
           and{" "}
           <Link
-            href="/privacy"
+            href={routes.privacy}
             className="underline underline-offset-4 hover:text-primary"
           >
             Privacy Policy

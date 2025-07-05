@@ -18,6 +18,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@workspace/ui/components/form";
+import { routes } from "@/app/routes";
 
 // Form validation schema for forgot password
 const forgotPasswordSchema = z.object({
@@ -108,7 +109,7 @@ export function ForgotPasswordForm({
             </Button>
 
             <Button asChild className="w-full text-md" size={"lg"}>
-              <Link href="/auth/login">Back to sign in</Link>
+              <Link href={routes.login}>Back to sign in</Link>
             </Button>
           </div>
         </AuthCard>
@@ -168,7 +169,7 @@ export function ForgotPasswordForm({
         {/* Back to login link */}
         <div className="text-center text-sm">
           Remember your password?{" "}
-          <Link href="/auth/login" className="underline underline-offset-4">
+          <Link href={routes.login} className="underline underline-offset-4">
             Sign in
           </Link>
         </div>

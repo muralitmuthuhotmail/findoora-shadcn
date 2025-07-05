@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
+import { Link } from "@workspace/ui/components/link";
 import { Button } from "@workspace/ui/components/button";
 import { Input } from "@workspace/ui/components/input";
 import {
@@ -15,6 +15,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@workspace/ui/components/form";
+import { routes } from "@/app/routes";
 
 // Form validation schema with improved error messages
 const loginSchema = z.object({
@@ -120,9 +121,8 @@ export function EmailPasswordForm({
                 <div className="flex items-center justify-between">
                   <FormLabel>Password</FormLabel>
                   <Link
-                    href="/auth/forgot-password"
-                    className="text-sm text-primary underline-offset-4 hover:underline"
-                  >
+                    href={routes.forgotPassword}
+                    className="text-sm text-primary underline-offset-4 hover:underline">
                     Forgot password?
                   </Link>
                 </div>
@@ -146,8 +146,7 @@ export function EmailPasswordForm({
             type="submit"
             className="w-full text-md"
             size={"lg"}
-            disabled={isFormDisabled}
-          >
+            disabled={isFormDisabled}>
             {isLoading ? "Signing in..." : "Sign in"}
           </Button>
         </div>
@@ -155,7 +154,7 @@ export function EmailPasswordForm({
         {/* Sign up link */}
         <div className="text-center text-sm">
           Don&apos;t have an account?{" "}
-          <Link href="/auth/signup" className="underline underline-offset-4">
+          <Link href={routes.register} className="underline underline-offset-4">
             Sign up
           </Link>
         </div>

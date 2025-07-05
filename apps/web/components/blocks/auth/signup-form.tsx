@@ -18,6 +18,7 @@ import {
   FormMessage,
 } from "@workspace/ui/components/form";
 import { SocialLogin } from "@/components/blocks/auth/social-login";
+import { routes } from "@/app/routes";
 
 // Form validation schema for signup
 const signupSchema = z
@@ -278,7 +279,7 @@ export function SignupForm({
         {/* Sign in link */}
         <div className="text-center text-sm">
           Already have an account?{" "}
-          <Link href="/auth/login" className="underline underline-offset-4">
+          <Link href={routes.login} className="underline underline-offset-4">
             Sign in
           </Link>
         </div>
@@ -289,14 +290,14 @@ export function SignupForm({
         By clicking create account, you agree to our{" "}
         <div>
           <Link
-            href="/terms"
+            href={routes.terms}
             className="underline underline-offset-4 hover:text-primary"
           >
             Terms of Service
           </Link>{" "}
           and{" "}
           <Link
-            href="/privacy"
+            href={routes.privacy}
             className="underline underline-offset-4 hover:text-primary"
           >
             Privacy Policy

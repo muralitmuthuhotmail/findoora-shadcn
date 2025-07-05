@@ -20,6 +20,7 @@ import {
 } from "@workspace/ui/components/form";
 import { LoadingSpinner } from "@workspace/ui/components/loading-spinner";
 import { Check, XCircle } from "lucide-react";
+import { routes } from "@/app/routes";
 
 // Form validation schema for reset password
 const resetPasswordSchema = z
@@ -162,7 +163,7 @@ export function ResetPasswordForm({
 
           <div className="space-y-3">
             <Button asChild className="w-full text-md" size={"lg"}>
-              <Link href="/auth/forgot-password">Request new reset link</Link>
+              <Link href={routes.resetPassword}>Request new reset link</Link>
             </Button>
 
             <Button
@@ -171,7 +172,7 @@ export function ResetPasswordForm({
               className="w-full text-md"
               size={"lg"}
             >
-              <Link href="/auth/login">Back to sign in</Link>
+              <Link href={routes.login}>Back to sign in</Link>
             </Button>
           </div>
         </AuthCard>
@@ -200,7 +201,7 @@ export function ResetPasswordForm({
           </div>
 
           <Button asChild className="w-full text-md" size={"lg"}>
-            <Link href="/auth/login">Continue to sign in</Link>
+            <Link href={routes.login}>Continue to sign in</Link>
           </Button>
         </AuthCard>
       </div>
@@ -285,7 +286,7 @@ export function ResetPasswordForm({
         {/* Back to login link */}
         <div className="text-center text-sm">
           Remember your password?{" "}
-          <Link href="/auth/login" className="underline underline-offset-4">
+          <Link href={routes.login} className="underline underline-offset-4">
             Sign in
           </Link>
         </div>
