@@ -30,13 +30,13 @@ interface SocialLoginProps {
 }
 
 const providerIcons: Record<SocialProvider, React.ReactNode> = {
-  google: <FaGoogle className="!h-[18px] !w-[18px]" />,
-  facebook: <FaFacebook className="!h-[18px] !w-[18px]" />,
-  apple: <FaApple className="!h-[18px] !w-[18px]" />,
-  twitter: <FaTwitter className="!h-[18px] !w-[18px]" />,
-  github: <FaGithub className="!h-[18px] !w-[18px]" />,
-  microsoft: <FaMicrosoft className="!h-[18px] !w-[18px]" />,
-  yahoo: <FaYahoo className="!h-[18px] !w-[18px]" />,
+  google: <FaGoogle className="!h-[21px] !w-[21px]" />,
+  facebook: <FaFacebook className="!h-[21px] !w-[21px]" />,
+  apple: <FaApple className="!h-[21px] !w-[21px]" />,
+  twitter: <FaTwitter className="!h-[21px] !w-[21px]" />,
+  github: <FaGithub className="!h-[21px] !w-[21px]" />,
+  microsoft: <FaMicrosoft className="!h-[21px] !w-[21px]" />,
+  yahoo: <FaYahoo className="!h-[21px] !w-[21px]" />,
 };
 
 const providerLabels: Record<SocialProvider, string> = {

@@ -26,7 +26,7 @@ export default function AuthLayout({
     <>
       <div className="flex h-full md:min-h-screen flex-col items-center justify-center">
         <AnimatedComponent delay={0.5} animationType="fade">
-          <div className="hidden md:block sticky top-0 z-50 w-full">
+          <div className="hidden md:block top-0 z-50 w-full">
             <Logo {...logoProps} />
           </div>
         </AnimatedComponent>
