@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "@workspace/ui/components/button";
 import { Loader2 } from "lucide-react";
 import {
@@ -29,15 +29,18 @@ interface SocialLoginProps {
   onProviderClick?: (provider: SocialProvider) => void;
 }
 
-const providerIcons: Record<SocialProvider, React.ReactNode> = {
-  google: <FaGoogle className="!h-[21px] !w-[21px]" />,
-  facebook: <FaFacebook className="!h-[21px] !w-[21px]" />,
-  apple: <FaApple className="!h-[21px] !w-[21px]" />,
-  twitter: <FaTwitter className="!h-[21px] !w-[21px]" />,
-  github: <FaGithub className="!h-[21px] !w-[21px]" />,
-  microsoft: <FaMicrosoft className="!h-[21px] !w-[21px]" />,
-  yahoo: <FaYahoo className="!h-[21px] !w-[21px]" />,
+const iconClassName="!h-[18px] !w-[18px]";
+
+const providerIcons: Record<SocialProvider, React.ReactElement<{ className?: string }>> = {
+  google: <FaGoogle className={iconClassName} />,
+  facebook: <FaFacebook className={iconClassName} />,
+  apple: <FaApple className={iconClassName} />,
+  twitter: <FaTwitter className={iconClassName} />,
+  github: <FaGithub className={iconClassName} />,
+  microsoft: <FaMicrosoft className={iconClassName} />,
+  yahoo: <FaYahoo className={iconClassName} />,
 };
+
 
 const providerLabels: Record<SocialProvider, string> = {
   google: "Google",
@@ -100,6 +103,7 @@ export function SocialLogin({
           {loadingProvider === provider ? (
             <Loader2 className="h-5 w-5 animate-spin" />
           ) : (
+            // Render the icon component
             providerIcons[provider]
           )}
         </Button>
