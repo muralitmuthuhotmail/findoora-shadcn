@@ -21,7 +21,7 @@ const Features = () => {
           {/* Card 1 */}
           <div className="bg-card rounded-xl pt-6 md:pt-8 pb-6 px-6 col-span-1 md:col-span-2 lg:col-span-1 border-1">
             {/* Media 1 Mobile */}
-            <div className="md:hidden mb-6 aspect-video w-full bg-card rounded-xl bg-placeholder"></div>
+            <div className="md:hidden mb-6 aspect-video w-full bg-card rounded-xl bg-placeholder shadow-sm"></div>
 
             <h3 className="text-2xl font-semibold tracking-tight">
               Plan Smarter
@@ -54,15 +54,15 @@ const Features = () => {
           </div>
 
           {/* Media 1 Desktop */}
-          <div className="hidden md:block border border-border/80 bg-card rounded-xl col-span-1 md:col-span-3 lg:col-span-2 bg-placeholder"></div>
+          <div className="hidden md:block border border-border/80 bg-card rounded-xl col-span-1 md:col-span-3 lg:col-span-2 bg-placeholder shadow-lg"></div>
 
           {/* Media 2 Desktop */}
-          <div className="hidden md:block border border-border/80 bg-card rounded-xl col-span-1 md:col-span-3 lg:col-span-2 bg-placeholder"></div>
+          <div className="hidden md:block border border-border/80 bg-card rounded-xl col-span-1 md:col-span-3 lg:col-span-2 bg-placeholder shadow-lg"></div>
 
           {/* Card 2 */}
           <div className="bg-card rounded-xl pt-6 md:pt-8 pb-6 px-6 col-span-1 md:col-span-2 lg:col-span-1 border-1">
             {/* Media 2 Mobile */}
-            <div className="md:hidden mb-6 aspect-video w-full bg-card rounded-xl bg-placeholder"></div>
+            <div className="md:hidden mb-6 aspect-video w-full bg-card rounded-xl bg-placeholder shadow-sm"></div>
 
             <h3 className="text-2xl font-semibold tracking-tight">
               Engage Better

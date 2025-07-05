@@ -34,7 +34,7 @@ const SectionLayout = forwardRef<HTMLElement, SectionLayoutProps>(
       children,
       className,
       variant = "fullscreen",
-      spacing = "normal",
+      spacing = "tight",
       align = "center",
       background = "transparent",
       id,

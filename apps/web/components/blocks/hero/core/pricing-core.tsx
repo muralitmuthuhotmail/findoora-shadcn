@@ -96,7 +96,7 @@ const PricingCard = ({
   return (
     <div
       className={cn(
-        "relative flex flex-col rounded-2xl border p-8 transition-all",
+        "relative flex flex-col rounded-2xl border p-8 transition-all max-w-sm",
         {
           "bg-card border-primary sm:shadow-2xl sm:shadow-primary/10":
             plan.isRecommended,
@@ -129,7 +129,7 @@ const PricingCard = ({
           {plan.features.map((feature) => (
             <li key={feature.title} className="flex items-center gap-3">
               <Check className="h-5 w-5 text-primary" />
-              <span className="text-md">{feature.title}</span>
+              <span className="text-md text-left">{feature.title}</span>
               {feature.tooltip && (
                 <Tooltip>
                   <TooltipTrigger className="cursor-help ml-auto">
@@ -164,16 +164,19 @@ const PricingGrid = ({
 }: PricingGridProps) => {
   return (
     <div
-      className={cn("w-full grid grid-cols-1 md:grid-cols-3 gap-8", className)}
+      className={cn(
+      "w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+      className
+      )}
     >
       {plans.map((plan) => (
-        <PricingCard
-          key={plan.name}
-          plan={plan}
-          selectedPeriod={selectedPeriod}
-          yearlyDiscount={yearlyDiscount}
-          onGetStarted={onGetStarted}
-        />
+      <PricingCard
+        key={plan.name}
+        plan={plan}
+        selectedPeriod={selectedPeriod}
+        yearlyDiscount={yearlyDiscount}
+        onGetStarted={onGetStarted}
+      />
       ))}
     </div>
   );

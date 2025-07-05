@@ -167,7 +167,7 @@ LegalLinks.displayName = "LegalLinks";
 // Main Footer Component
 const SiteFooter = () => {
   return (
-    <footer className="bg-card border-t px-4">
+    <footer className="bg-card border-t px-4 shadow-2xl transition-all duration-300">
       <div className="max-w-7xl mx-auto">
         {/* Newsletter Section & Links Grid - Left-Right Layout */}
         <div className="py-12">

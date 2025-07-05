@@ -1,6 +1,6 @@
 export const appConfig = {
   transition: true,
-  transitionDuration: 0.2,
+  transitionDuration: 0.25,
   transitionDelay: 0,
   maxWidth: "7xl",
   sections: ["hero", "features", "pricing", "testimonial", "faq", "footer"],
