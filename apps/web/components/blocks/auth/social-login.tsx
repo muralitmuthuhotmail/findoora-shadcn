@@ -62,7 +62,7 @@ export function SocialLogin({
 }: SocialLoginProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingProvider, setLoadingProvider] = useState<SocialProvider | null>(
-    null
+    null,
   );
 
   const handleSocialLogin = async (provider: SocialProvider) => {
@@ -100,7 +100,8 @@ export function SocialLogin({
           type="button"
           disabled={isButtonDisabled}
           onClick={() => handleSocialLogin(provider)}
-          title={`Continue with ${providerLabels[provider]}`}>
+          title={`Continue with ${providerLabels[provider]}`}
+        >
           {loadingProvider === provider ? (
             <LoadingSpinner size={"sm"} />
           ) : (
