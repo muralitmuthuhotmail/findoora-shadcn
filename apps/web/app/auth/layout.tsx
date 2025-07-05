@@ -6,6 +6,8 @@ import { appConfig } from "@/app/app-config";
 import { useId } from "react";
 import { usePathname } from "next/navigation";
 import { routes } from "@/app/routes";
+import { Button } from "@workspace/ui/components/button";
+import { Link } from "@/components/ui/link";
 
 export default function AuthLayout({
   children,
@@ -25,12 +27,18 @@ export default function AuthLayout({
 
   return (
     <>
+      <Navbar
+        maxWidth={appConfig.maxWidth}
+        hasBlur={true}
+        className="hidden md:block fixed"
+        authButton={{
+          text: "Need help?",
+          variant: "link",
+          href: routes.home,
+        }}
+        showThemeToggle={false}
+      />
       <div className="flex h-full md:min-h-screen flex-col items-center justify-center">
-        <AnimatedComponent delay={0.5} animationType="fade">
-          <div className="hidden md:block top-0 z-50 w-full">
-            <Logo {...logoProps} />
-          </div>
-        </AnimatedComponent>
         <Navbar
           maxWidth={appConfig.maxWidth}
           hasBlur={true}
@@ -44,8 +52,7 @@ export default function AuthLayout({
         />
         <div
           className="flex w-full sm:max-w-md flex-col gap-6 h-hull"
-          id={useId()}
-        >
+          id={useId()}>
           <AnimatedComponent key={pathname}>{children}</AnimatedComponent>
         </div>
       </div>
