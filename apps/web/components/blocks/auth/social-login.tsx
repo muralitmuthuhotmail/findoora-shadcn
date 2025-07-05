@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { Button } from "@workspace/ui/components/button";
-import { Loader2 } from "lucide-react";
 import {
   FaGoogle,
   FaFacebook,
@@ -12,6 +11,7 @@ import {
   FaMicrosoft,
   FaYahoo,
 } from "react-icons/fa";
+import { LoadingSpinner } from "@workspace/ui/components/loading-spinner";
 
 type SocialProvider =
   | "google"
@@ -62,7 +62,7 @@ export function SocialLogin({
 }: SocialLoginProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingProvider, setLoadingProvider] = useState<SocialProvider | null>(
-    null,
+    null
   );
 
   const handleSocialLogin = async (provider: SocialProvider) => {
@@ -72,7 +72,7 @@ export function SocialLogin({
       onLoading?.(true);
 
       if (onProviderClick) {
-        await onProviderClick(provider);
+        onProviderClick(provider);
       } else {
         // TODO: Implement Firebase Auth social login
         console.log(`${provider} login clicked`);
@@ -100,10 +100,9 @@ export function SocialLogin({
           type="button"
           disabled={isButtonDisabled}
           onClick={() => handleSocialLogin(provider)}
-          title={`Continue with ${providerLabels[provider]}`}
-        >
+          title={`Continue with ${providerLabels[provider]}`}>
           {loadingProvider === provider ? (
-            <Loader2 className="h-5 w-5 animate-spin" />
+            <LoadingSpinner size={"sm"} />
           ) : (
             // Render the icon component
             providerIcons[provider]
