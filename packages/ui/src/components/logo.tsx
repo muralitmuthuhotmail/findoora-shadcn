@@ -188,7 +188,7 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
       textClassName,
       className,
       asLink = false,
-      href = "#",
+      href = "/",
       target,
       rel,
       "aria-label": ariaLabel,

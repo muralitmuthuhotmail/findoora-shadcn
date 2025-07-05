@@ -95,7 +95,7 @@ const Navbar = memo<NavbarProps>(
     // Destructure auth button props with defaults
     const {
       text: authText = "Sign In",
-      href: authHref = "/auth/login",
+      href: authHref = routes.login,
       variant: authVariant = "default",
       size: authSize = "sm",
     } = authButton;

@@ -2,9 +2,10 @@
 import Navbar from "@/components/navbar";
 import Logo, { LogoProps } from "@workspace/ui/components/logo";
 import { AnimatedComponent } from "@/components/blocks/hero/animated-component";
-import { appConfig } from "../app-config";
+import { appConfig } from "@/app/app-config";
 import { useId } from "react";
 import { usePathname } from "next/navigation";
+import { routes } from "@/app/routes";
 
 export default function AuthLayout({
   children,
@@ -13,7 +14,7 @@ export default function AuthLayout({
 }>) {
   const logoProps = {
     asLink: true,
-    href: "/",
+    href: routes.home,
     text: "findoora",
     textClassName: "font-bold",
     className: "py-4 flex justify-center item-center",
@@ -34,7 +35,7 @@ export default function AuthLayout({
           maxWidth={appConfig.maxWidth}
           hasBlur={true}
           className="md:hidden mb-6"
-          authButton={{ text: "Need help?", variant: "link", href: "/" }}
+          authButton={{ text: "Need help?", variant: "link", href: routes.home }}
           showThemeToggle={false}
         />
         <div
