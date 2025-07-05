@@ -27,7 +27,7 @@ export default function HeroSectionOne() {
       >
         <AnimatedTitle
           text="Find and compare the best SaaS tools for your business"
-          className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tighter"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold"
           delay={0}
         />
 

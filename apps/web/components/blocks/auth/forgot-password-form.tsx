@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
 import { cn } from "@workspace/ui/lib/utils";
 import { AuthCard } from "@workspace/ui/components/ui/auth-card";
 import { Button } from "@workspace/ui/components/button";
@@ -19,6 +18,7 @@ import {
   FormMessage,
 } from "@workspace/ui/components/form";
 import { routes } from "@/app/routes";
+import { Link } from "@/components/ui/link";
 
 // Form validation schema for forgot password
 const forgotPasswordSchema = z.object({

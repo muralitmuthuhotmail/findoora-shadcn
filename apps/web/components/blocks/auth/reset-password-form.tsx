@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { cn } from "@workspace/ui/lib/utils";
 import { AuthCard } from "@workspace/ui/components/ui/auth-card";
@@ -21,6 +20,7 @@ import {
 import { LoadingSpinner } from "@workspace/ui/components/loading-spinner";
 import { Check, XCircle } from "lucide-react";
 import { routes } from "@/app/routes";
+import { Link } from "@/components/ui/link";
 
 // Form validation schema for reset password
 const resetPasswordSchema = z

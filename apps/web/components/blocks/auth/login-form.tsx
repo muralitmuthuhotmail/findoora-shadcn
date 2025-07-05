@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { cn } from "@workspace/ui/lib/utils";
 import { AuthCard } from "@workspace/ui/components/ui/auth-card";
 import { SocialLogin } from "@/components/blocks/auth/social-login";
 import { EmailPasswordForm } from "@/components/blocks/auth/email-password-form";
 import { routes } from "@/app/routes";
+import { Link } from "@/components/ui/link";
 
 export function LoginForm({
   className,

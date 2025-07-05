@@ -35,8 +35,7 @@ const FAQ = memo<FAQProps>(
           sidebar={
             <SectionHeader
               title={title}
-              align="left"
-              titleClassName="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tighter max-w-sm text-center md:text-left w-full mt-0 lg:mt-4 text-wrap"
+              className="text-center md:text-left mt-0 md:mt-4"
             />
           }
           sidebarPosition="left"

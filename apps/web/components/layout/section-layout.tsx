@@ -102,7 +102,7 @@ const SectionHeader = ({
   );
 
   const titleClasses = cn(
-    "text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tighter",
+    "text-2xl sm:text-3xl md:text-4xl font-semibold",
     titleClassName,
   );
 
