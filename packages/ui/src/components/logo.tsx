@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@workspace/ui/lib/utils";
 import React, { forwardRef } from "react";
 import { GalleryVerticalEnd, type LucideIcon } from "lucide-react";
