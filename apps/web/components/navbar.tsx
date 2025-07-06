@@ -121,10 +121,32 @@ const Navbar = memo<NavbarProps>(
     );
 
     const innerContainerClasses = cn(
-      "flex items-center justify-between w-full mx-auto",
+      "flex items-center justify-between w-full mx-auto transition-all duration-[--duration] ease-in-out",
       `max-w-${maxWidth}`,
       "gap-4",
     );
+
+    // Add shadow to navbar when scrolled down
+    // useEffect(() => {
+    //   const navbar = document.querySelector('nav[aria-label="Main navigation"]');
+    //   if (!navbar) return;
+
+    //   const handleScroll = () => {
+    //   if (window.scrollY > 0) {
+    //     navbar.classList.add("shadow-sm");
+    //   } else {
+    //     navbar.classList.remove("shadow-sm");
+    //   }
+    //   };
+
+    //   window.addEventListener("scroll", handleScroll, { passive: true });
+    //   // Initial check
+    //   handleScroll();
+
+    //   return () => {
+    //   window.removeEventListener("scroll", handleScroll);
+    //   };
+    // }, [maxWidth]);
 
     return (
       <nav
@@ -162,8 +184,7 @@ const Navbar = memo<NavbarProps>(
               onClick={handleAuthClick}
               className={cn(
                 "font-medium transition-all duration-200",
-                "hover:scale-105 active:scale-95",
-                "shadow-sm hover:shadow-md",
+                "hover:scale-102 active:scale-98",
                 authVariant === "default" && "bg-primary hover:bg-primary/90",
               )}
               aria-label={`Navigate to ${authText.toLowerCase()} page`}

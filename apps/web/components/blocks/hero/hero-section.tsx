@@ -36,19 +36,17 @@ export default function HeroSectionOne() {
           className="mt-4 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto"
           delay={1.4}
         />
-        <AnimatedComponent delay={1.45}>
-          <HeroCTA
-            primaryAction={{
-              label: "Get Started",
-              onClick: handleGetStarted,
-            }}
-            secondaryAction={{
-              label: "Learn More",
-              onClick: handleLearnMore,
-              variant: "outline",
-            }}
-          />
-        </AnimatedComponent>
+        <HeroCTA
+          primaryAction={{
+            label: "Get Started",
+            onClick: handleGetStarted,
+          }}
+          secondaryAction={{
+            label: "Learn More",
+            onClick: handleLearnMore,
+            variant: "outline",
+          }}
+        />
         <HeroMedia delay={2}>
           <div className="w-full overflow-hidden rounded-xl border border-border">
             <div className="aspect-[16/9] h-auto w-full object-cover backdrop-blur bg-placeholder" />

@@ -62,7 +62,7 @@ const PricingBillingToggle = ({
       onValueChange={onPeriodChange}
       className={cn("justify-center flex items-center", className)}
     >
-      <TabsList className="h-12 bg-card border px-1.5 rounded-full shadow-md transition-all p-2 py-3 align-items-center">
+      <TabsList className="h-12 bg-card rounded-full border px-1.5 shadow-md transition-all p-2 py-3 align-items-center">
         <TabsTrigger
           value="monthly"
           className="h-8 p-4 py-1.5 rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"

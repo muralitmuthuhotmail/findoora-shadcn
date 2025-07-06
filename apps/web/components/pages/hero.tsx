@@ -16,16 +16,10 @@ const FAQ = lazy(() => import("@/components/blocks/hero/faq"));
 const SiteFooter = lazy(() => import("@/components/blocks/hero/footer"));
 
 export default function HeroPage() {
-  const sections = [<Features />, <Pricing />, <Testimonial />, <FAQ />];
+  const sections = [<HeroSectionOne />,<Features />, <Pricing />, <Testimonial />, <FAQ />];
   return (
     <>
-      <AnimatedComponent
-        animationType="slideDown"
-        delay={1.5}
-        className="sticky top-0 z-50"
-      >
-        <Navbar maxWidth={appConfig.maxWidth} isSticky />
-      </AnimatedComponent>
+      <Navbar maxWidth={appConfig.maxWidth} isSticky />
       <div className="backdrop-blur flex w-full items-center justify-center px-4 py-3">
         <div
           className={cn(
@@ -34,17 +28,14 @@ export default function HeroPage() {
             "gap-4",
           )}
         >
-          <HeroSectionOne />
           {sections.map((Section, index) => (
-            <AnimatedComponent key={index} delay={index * 0.1}>
+            <AnimatedComponent key={index} delay={index * 0.1} className="min-h-screen">
               <Suspense fallback={<LoadingSpinner />}>{Section}</Suspense>
             </AnimatedComponent>
           ))}
         </div>
       </div>
-      <Suspense fallback={<LoadingSpinner />}>
-        <SiteFooter />
-      </Suspense>
+      <SiteFooter />
     </>
   );
 }
