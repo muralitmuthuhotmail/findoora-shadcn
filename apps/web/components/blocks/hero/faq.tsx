@@ -7,9 +7,9 @@ import {
 } from "@/components/layout";
 import {
   FAQList,
-  DEFAULT_FAQ_DATA,
   type FAQItem,
 } from "@/components/blocks/hero/core";
+import { DEFAULT_FAQ_DATA } from "./core/faq-data";
 
 interface FAQProps {
   title?: string;
