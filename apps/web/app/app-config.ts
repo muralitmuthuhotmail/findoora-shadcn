@@ -1,4 +1,5 @@
 export const appConfig = {
+  title: "Findoora Inc",
   transition: true,
   transitionDuration: 0.25,
   transitionDelay: 0,

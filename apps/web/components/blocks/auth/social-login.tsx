@@ -95,7 +95,7 @@ export function SocialLogin({
         <Button
           variant="outline"
           size="icon"
-          className="rounded-full h-10 w-10 bg-accent/80 dark:bg-accent/60 text-muted-foreground hover:bg-accent/60 dark:hover:bg-accent/80 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-colors"
+          className="rounded-full h-10 w-10 bg-accent/80 dark:bg-background text-muted-foreground hover:bg-accent/60 dark:hover:bg-accent/80 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background transition-colors"
           key={provider}
           type="button"
           disabled={isButtonDisabled}

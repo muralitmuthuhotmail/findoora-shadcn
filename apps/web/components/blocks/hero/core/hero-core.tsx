@@ -45,7 +45,7 @@ const AnimatedTitle = ({ text, className, delay = 0 }: AnimatedTitleProps) => {
             delay: index * 0.15 + delay,
             ease: "easeInOut",
           }}
-          className="mr-2 inline-block text-primary"
+          className="mr-2 inline-block"
         >
           {word}
         </motion.span>

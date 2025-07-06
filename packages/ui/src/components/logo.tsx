@@ -14,31 +14,31 @@ const sizeConfig = {
   xs: {
     gap: "gap-1.5",
     iconSize: "size-6",
-    textSize: "text-sm",
+    textSize: "text-base",
     innerIcon: "size-3",
   },
   sm: {
     gap: "gap-2",
     iconSize: "size-7",
-    textSize: "text-base",
+    textSize: "text-lg",
     innerIcon: "size-4",
   },
   md: {
     gap: "gap-2.5",
     iconSize: "size-10",
-    textSize: "text-lg md:text-xl",
+    textSize: "text-xl",
     innerIcon: "size-5",
   },
   lg: {
     gap: "gap-3",
     iconSize: "size-12",
-    textSize: "text-xl md:text-2xl",
+    textSize: "text-2xl",
     innerIcon: "size-6",
   },
   xl: {
     gap: "gap-3.5",
     iconSize: "size-16",
-    textSize: "text-2xl md:text-3xl",
+    textSize: "text-3xl",
     innerIcon: "size-8",
   },
 } as const;
@@ -53,7 +53,7 @@ const iconVariantConfig = {
 } as const;
 
 const iconShapeConfig = {
-  square: "rounded-md",
+  square: "rounded-sm",
   rounded: "rounded-lg",
   circle: "rounded-full",
 } as const;
@@ -63,14 +63,6 @@ const textWeightConfig = {
   medium: "font-medium",
   semibold: "font-semibold",
   bold: "font-bold",
-} as const;
-
-const innerIconSizeMap = {
-  xs: "size-3",
-  sm: "size-4",
-  md: "size-5",
-  lg: "size-6",
-  xl: "size-8",
 } as const;
 
 export interface LogoProps extends React.HTMLAttributes<HTMLElement> {
@@ -129,11 +121,6 @@ export interface LogoProps extends React.HTMLAttributes<HTMLElement> {
   textWeight?: TextWeight;
 
   /**
-   * Custom icon size (overrides size variant)
-   */
-  customIconSize?: string | number;
-
-  /**
    * Custom icon class name
    */
   iconClassName?: string;
@@ -183,7 +170,6 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
       iconVariant = "default",
       iconShape = "square",
       textWeight = "medium",
-      customIconSize,
       iconClassName,
       textClassName,
       className,
@@ -198,7 +184,7 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
     ref,
   ) => {
     const Component = asLink ? "a" : "div";
-    const finalInteractive = interactive || asLink || !!onClick;
+    const isInteractive = interactive || asLink || !!onClick;
 
     // Get size configuration
     const sizeStyles = sizeConfig[size];
@@ -208,7 +194,7 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
       "inline-flex items-center font-medium transition-all duration-200 ease-in-out",
       sizeStyles.gap,
       orientation === "vertical" ? "flex-col" : "flex-row",
-      finalInteractive && "hover:opacity-80 active:scale-95 cursor-pointer",
+      isInteractive && "hover:opacity-80 active:scale-95 cursor-pointer",
       className,
     );
 
@@ -227,17 +213,6 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
       textClassName,
     );
 
-    const innerIconClass = innerIconSizeMap[size];
-
-    const iconStyle = customIconSize
-      ? {
-          width: customIconSize,
-          height: customIconSize,
-          minWidth: customIconSize,
-          minHeight: customIconSize,
-        }
-      : undefined;
-
     const linkProps = asLink
       ? {
           href,
@@ -248,8 +223,8 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
 
     const accessibilityProps = {
       "aria-label": ariaLabel || (hideText ? text : undefined),
-      role: finalInteractive ? "button" : undefined,
-      tabIndex: finalInteractive ? 0 : undefined,
+      role: isInteractive ? "button" : undefined,
+      tabIndex: isInteractive ? 0 : undefined,
     };
 
     return (
@@ -261,8 +236,8 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
         {...accessibilityProps}
         {...props}
       >
-        <div className={iconClasses} style={iconStyle} aria-hidden={!hideText}>
-          <IconComponent className={innerIconClass} />
+        <div className={iconClasses} aria-hidden={!hideText}>
+          <IconComponent className={sizeStyles.innerIcon} />
         </div>
 
         {!hideText && <span className={textClasses}>{text}</span>}
