@@ -1,0 +1,180 @@
+# GitHub Copilot Instructions for Findoora ShadCN Project
+
+## Project Overview
+This is a monorepo built with Next.js 15+, TypeScript, Turbo, pnpm, shadcn/ui, Tailwind CSS, Framer Motion, and Lucide React icons.
+
+## Code Standards & Conventions
+
+### TypeScript Rules
+- Use strict TypeScript configuration
+- Always define proper types/interfaces
+- Avoid `any` type - use `unknown` if necessary
+- Use type-only imports when possible
+- Example:
+```typescript
+import type { ComponentProps } from 'react'
+import { Button } from '@workspace/ui'
+```
+
+### File Naming Conventions
+- Components: kebab-case (`user-profile.tsx`)
+- Utilities: kebab-case (`format-date.ts`)
+- Pages: kebab-case (`user-profile/page.tsx`)
+- Types: PascalCase with `.types.ts` suffix
+
+### Import Organization (Always follow this order)
+```typescript
+// 1. React/Next.js imports
+import React from 'react'
+import { NextPage } from 'next'
+
+// 2. External libraries
+import { motion } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
+
+// 3. Internal packages
+import { Button, Card } from '@workspace/ui'
+
+// 4. Relative imports
+import { UserCard } from './UserCard'
+import type { User } from '../types'
+```
+
+## Project Structure Rules
+
+### Directory Guidelines
+- `apps/web/app/`: Next.js App Router pages and layouts (SSR focus, minimal logic)
+- `apps/web/components/`: App-specific React components (prop-driven, minimal hooks)
+- `apps/web/pages/`: Page components that compose UI (hooks allowed, can be moved to hooks/ if reused)
+- `apps/web/hooks/`: Custom React hooks (reusable/complex hooks only)
+- `packages/ui/src/components/ui/`: Atomic components from shadcn/ui
+- `packages/ui/src/components/blocks/`: Purpose-specific component blocks
+
+### Component Organization
+- Create components in appropriate subdirectories
+- Use `components/blocks/` for reusable sections
+- Use `components/layout/` for layout components
+- Use `components/pages/` for page-specific components
+
+## Component Development Guidelines
+
+### UI Components (packages/ui)
+- Use shadcn/ui patterns and conventions
+- Include proper TypeScript types with JSDoc comments
+- Support theme variants
+- Use class-variance-authority for variants
+- Always use React.forwardRef for interactive components
+- Example pattern:
+```typescript
+import type { VariantProps } from 'class-variance-authority'
+import { cn } from '../lib/utils'
+
+interface ButtonProps 
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  /**
+   * The size variant of the button
+   */
+  size?: 'sm' | 'md' | 'lg'
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, ...props }, ref) => {
+    return (
+      <button
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Button.displayName = 'Button'
+```
+
+### Animation Guidelines
+- Use Framer Motion for complex animations
+- Keep animations subtle and purposeful
+- Consider reduced motion preferences
+- Use consistent easing and duration (0.3s, easeOut)
+- Example pattern:
+```typescript
+const variants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.3, ease: 'easeOut' }
+  }
+}
+```
+
+## Performance Best Practices
+
+### Next.js Optimizations
+- Use `next/image` for optimized images
+- Implement proper loading states
+- Use dynamic imports for code splitting
+- Use tree-shaking friendly imports:
+```typescript
+// Good
+import { Button } from '@workspace/ui'
+// Avoid
+import * as UI from '@workspace/ui'
+```
+
+### Component Performance
+- Use `React.memo()` for expensive components
+- Optimize re-renders with `useCallback` and `useMemo`
+- Avoid inline objects and functions in JSX
+- Use proper dependency arrays in hooks
+
+## Package Management
+- Use pnpm as package manager
+- Add dependencies with filters:
+  - Root: `pnpm add <package-name>`
+  - Specific workspace: `pnpm add <package-name> --filter=web`
+  - UI package: `pnpm add <package-name> --filter=@workspace/ui`
+
+## Development Commands
+- Start dev server: `pnpm dev` or `pnpm dev:web`
+- Build: `pnpm build`
+- Lint: `pnpm lint`
+- Format: `pnpm format`
+- Test: `pnpm test`
+
+## Code Quality Rules
+- Follow ESLint configuration
+- Use Prettier for formatting
+- Write meaningful commit messages (conventional commits)
+- Keep components small and focused
+- Use semantic HTML
+- Optimize for accessibility
+- Document complex logic with JSDoc
+
+## Environment & Security
+- Never commit sensitive data
+- Use `.env.local` for local development
+- Use `NEXT_PUBLIC_` prefix for client-side env vars
+- Document required environment variables
+
+## What to AVOID
+- Using `any` type
+- Inline styles (use Tailwind CSS)
+- Importing entire libraries
+- Large components (break them down)
+- Hardcoded values (use constants/config)
+- Missing TypeScript types
+- Inconsistent naming conventions
+
+## What to PRIORITIZE
+- Type safety and proper TypeScript usage
+- Component reusability and composability
+- Performance optimization
+- Accessibility compliance
+- Clean, readable code
+- Proper error handling
+- Consistent styling with Tailwind CSS
+- Proper testing coverage
+
+Remember: This is a monorepo with shared packages. Always consider reusability when creating components and ensure they follow the established patterns.

@@ -1,0 +1,84 @@
+# UI Package Copilot Instructions
+
+## Focus: Reusable UI Components
+
+### Component Architecture
+- All components should be reusable across the entire monorepo
+- Follow shadcn/ui patterns and conventions
+- Use class-variance-authority for variant management
+- Support theme variants and proper TypeScript definitions
+
+### File Structure
+- `ui/`: Atomic components (Button, Input, Card, etc.)
+- `blocks/`: Composite components for specific purposes
+
+### Required Patterns
+1. Always use React.forwardRef for interactive components
+2. Include proper TypeScript interfaces with JSDoc
+3. Use `cn()` utility for className merging
+4. Export component and types separately
+5. Include displayName for debugging
+
+### Example Template
+```typescript
+import { forwardRef } from 'react'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from '../../lib/utils'
+
+const componentVariants = cva(
+  'base-classes',
+  {
+    variants: {
+      variant: {
+        default: 'default-classes',
+        // ... other variants
+      },
+      size: {
+        sm: 'small-classes',
+        // ... other sizes
+      }
+    },
+    defaultVariants: {
+      variant: 'default',
+      size: 'sm'
+    }
+  }
+)
+
+interface ComponentProps
+  extends React.HTMLAttributes<HTMLElement>,
+    VariantProps<typeof componentVariants> {
+  /**
+   * Description of the prop
+   */
+  customProp?: string
+}
+
+const Component = forwardRef<HTMLElement, ComponentProps>(
+  ({ className, variant, size, ...props }, ref) => {
+    return (
+      <element
+        className={cn(componentVariants({ variant, size }), className)}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
+Component.displayName = 'Component'
+
+export { Component, type ComponentProps }
+```
+
+### Styling Guidelines
+- Use Tailwind CSS exclusively
+- Follow the design system tokens
+- Support dark/light themes
+- Use CSS variables for dynamic theming
+- Implement proper focus states and accessibility
+
+### Testing
+- Components should be testable in isolation
+- Include proper ARIA attributes
+- Support keyboard navigation
+- Test with different variants and props

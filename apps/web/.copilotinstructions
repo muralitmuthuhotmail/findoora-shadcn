@@ -1,0 +1,96 @@
+# Web App Copilot Instructions
+
+## Focus: Next.js 15+ Application with App Router
+
+### App Router Structure
+- `app/`: Contains routes, layouts, and server components
+- `components/`: Contains client components organized by purpose
+- `pages/`: Contains page-level components that compose the UI
+- `hooks/`: Contains custom React hooks
+
+### Component Organization
+```
+components/
+├── blocks/          # Reusable sections (hero, auth, etc.)
+├── layout/          # Layout components (navbar, footer, etc.)
+├── pages/           # Page-specific components
+└── ui/              # App-specific UI overrides (if needed)
+```
+
+### Development Guidelines
+
+#### App Router Pages (`app/`)
+- Focus on SSR and metadata
+- Keep minimal logic - delegate to page components
+- Include proper metadata and SEO optimizations
+- Use server components by default, client components only when needed
+
+#### Page Components (`pages/`)
+- Compose UI using components from `components/`
+- Can use hooks for state management
+- Move complex hooks to `hooks/` directory if reused
+- Handle data fetching and business logic
+
+#### Regular Components (`components/`)
+- Should be primarily prop-driven
+- Use hooks only for internal component logic
+- Organize into nested folders by purpose
+- Import UI components from `@workspace/ui`
+
+#### Custom Hooks (`hooks/`)
+- Place reusable or complex hooks here
+- Structure with subdirectories by feature area
+- Include proper TypeScript types
+- Test hooks in isolation
+
+### Next.js Best Practices
+- Use `next/image` for all images
+- Implement proper loading states
+- Use dynamic imports for code splitting
+- Optimize bundle size with proper imports
+- Handle errors gracefully with error boundaries
+
+### State Management
+- Use React hooks for local state
+- Consider Context API for shared state
+- Use server state properly with App Router
+- Implement proper loading and error states
+
+### Routing
+- Use App Router conventions
+- Implement proper navigation with `next/navigation`
+- Handle route parameters and search params correctly
+- Use layouts for shared UI elements
+
+### Performance
+- Use React.memo() judiciously
+- Implement proper caching strategies
+- Optimize images and assets
+- Use Suspense boundaries for loading states
+
+### Authentication & Security
+- Implement proper authentication flows
+- Handle tokens securely
+- Validate data on both client and server
+- Use environment variables properly
+
+### Example Page Component Structure
+```typescript
+import { Metadata } from 'next'
+import { HeroSection } from '@/components/pages/hero'
+import { FeaturesList } from '@/components/blocks/features'
+
+export const metadata: Metadata = {
+  title: 'Page Title',
+  description: 'Page description'
+}
+
+export default function HomePage() {
+  return (
+    <main>
+      <HeroSection />
+      <FeaturesList />
+    </main>
+  )
+}
+```

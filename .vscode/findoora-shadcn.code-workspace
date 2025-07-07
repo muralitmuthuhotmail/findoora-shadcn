@@ -1,0 +1,58 @@
+{
+  "folders": [
+    {
+      "name": "🏠 Root",
+      "path": "."
+    },
+    {
+      "name": "🌐 Web App",
+      "path": "./apps/web"
+    },
+    {
+      "name": "🎨 UI Components",
+      "path": "./packages/ui"
+    },
+    {
+      "name": "🔧 ESLint Config",
+      "path": "./packages/eslint-config"
+    },
+    {
+      "name": "📝 TypeScript Config",
+      "path": "./packages/typescript-config"
+    }
+  ],
+  "settings": {
+    "github.copilot.enable": {
+      "*": true,
+      "yaml": false,
+      "plaintext": false,
+      "markdown": true
+    },
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/.next": true,
+      "**/.turbo": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/.next": true,
+      "**/.turbo": true,
+      "**/pnpm-lock.yaml": true
+    },
+    "typescript.preferences.includePackageJsonAutoImports": "on",
+    "typescript.workspaceSymbols.scope": "allOpenProjects"
+  },
+  "extensions": {
+    "recommendations": [
+      "github.copilot",
+      "github.copilot-chat",
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "bradlc.vscode-tailwindcss",
+      "ms-vscode.vscode-typescript-next",
+      "usernamehw.errorlens"
+    ]
+  }
+}

@@ -1,3 +1,63 @@
 {
-  "tailwindCSS.experimental.configFile": "packages/ui/src/styles/globals.css"
+  "tailwindCSS.experimental.configFile": "packages/ui/src/styles/globals.css",
+  
+  // GitHub Copilot Settings
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false
+  },
+  "github.copilot.advanced": {
+    "length": 500,
+    "temperature": 0.1,
+    "top_p": 0.95
+  },
+  
+  // File Associations for Better Context
+  "files.associations": {
+    "*.copilotinstructions": "markdown"
+  },
+  
+  // TypeScript & Code Quality
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  
+  // Editor Settings for Better Code Context
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.suggest.showInlineDetails": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.tabCompletion": "on",
+  
+  // ESLint & Prettier Integration
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  
+  // Language-specific settings
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  
+  // Emmet for JSX
+  "emmet.includeLanguages": {
+    "typescriptreact": "html",
+    "javascriptreact": "html"
+  },
+  
+  // Better IntelliSense for monorepo
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.workspaceSymbols.scope": "allOpenProjects"
 }
