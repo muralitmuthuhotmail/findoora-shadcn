@@ -1,0 +1,307 @@
+# Basic Usage
+
+This guide covers the fundamental operations you'll perform daily in Findoora. After reading this section, you'll be able to search, save, and organize content effectively.
+
+## Your First Search
+
+The search bar is the heart of Findoora. It's always visible and ready to help you find what you need.
+
+import { Steps } from 'nextra/components'
+
+<Steps>
+### Locate the Search Bar
+
+The search bar is prominently displayed at the top of every page. You can click on it or use the keyboard shortcut `Ctrl/Cmd + K` to focus it instantly.
+
+### Enter Your Query
+
+Start typing what you're looking for. Findoora supports natural language, so you can search exactly as you would speak:
+
+- "project documentation from last month"
+- "budget spreadsheets"
+- "meeting notes with Sarah"
+
+### Review the Results
+
+Results appear in real-time as you type. Each result shows:
+- **Title**: The name or title of the content
+- **Preview**: A snippet of the content
+- **Source**: Where the content comes from
+- **Date**: When it was created or last modified
+</Steps>
+
+## Understanding Search Results
+
+### Result Types
+
+Findoora can find various types of content:
+
+import { Tabs, Tab } from 'nextra/components'
+
+<Tabs items={['Documents', 'Images', 'Web Pages', 'Messages']}>
+  <Tab>
+    **Documents**: PDFs, Word docs, spreadsheets, presentations
+    - Shows document title and author
+    - Displays relevant text snippets
+    - Indicates file size and format
+  </Tab>
+  <Tab>
+    **Images**: Photos, screenshots, diagrams, charts
+    - Shows thumbnail preview
+    - Includes image metadata
+    - Displays any text found in images (OCR)
+  </Tab>
+  <Tab>
+    **Web Pages**: Bookmarks, saved articles, web content
+    - Shows page title and URL
+    - Includes meta description
+    - Shows last visited date
+  </Tab>
+  <Tab>
+    **Messages**: Emails, chat messages, comments
+    - Shows sender and recipient
+    - Includes conversation context
+    - Displays timestamp
+  </Tab>
+</Tabs>
+
+### Result Ranking
+
+Findoora uses several factors to rank results:
+
+1. **Relevance**: How well the content matches your search
+2. **Recency**: When you last accessed the content
+3. **Popularity**: How often you use similar content
+4. **Context**: Your current workspace and recent activity
+
+## Basic Actions
+
+### Viewing Content
+
+Click on any search result to view the full content. Depending on the type:
+
+- **Documents**: Opens in a built-in viewer
+- **Images**: Displays in a gallery view
+- **Web pages**: Opens in the integrated browser
+- **Messages**: Shows in conversation context
+
+### Saving Content
+
+There are several ways to save content for later:
+
+**The Star Method:**
+1. Hover over any search result
+2. Click the star icon that appears
+3. The item is saved to your "Starred" collection
+
+**Keyboard Shortcut:**
+- Press `S` while viewing any content to save it instantly
+
+**Bulk Saving:**
+1. Select multiple results using checkboxes
+2. Click the "Save Selected" button
+3. Choose where to save them
+
+### Quick Filters
+
+Use the filter panel to narrow down your results:
+
+**By Type:**
+- Documents
+- Images  
+- Web Pages
+- Messages
+- All Types
+
+**By Date:**
+- Today
+- This Week
+- This Month
+- This Year
+- Custom Range
+
+**By Source:**
+- Google Drive
+- Email
+- Slack
+- GitHub
+- Custom Sources
+
+## Navigation Basics
+
+### Main Areas
+
+Familiarize yourself with these key areas:
+
+```
+┌─────────────────────────────────────┐
+│ 🔍 Search Bar                      │
+├─────────────────────────────────────┤
+│ 📁 Collections    │ 📄 Content     │
+│                   │                │
+│ • Starred         │ Search results │
+│ • Recent          │ or             │
+│ • Work Projects   │ Selected       │
+│ • Personal        │ collection     │
+│                   │ content        │
+└─────────────────────────────────────┘
+```
+
+### Collections Sidebar
+
+Your collections appear on the left side:
+
+- **Quick Collections**: Starred, Recent, All Items
+- **Custom Collections**: Your organized content groups
+- **Shared Collections**: Collections shared with you
+
+### Content Area
+
+The main content area shows:
+
+- Search results when searching
+- Collection contents when browsing
+- Individual content when viewing
+
+## Working with Collections
+
+Collections help you organize related content together.
+
+### Creating a Collection
+
+<Steps>
+### Click "New Collection"
+
+Find this button in the collections sidebar or use the `+` icon.
+
+### Name Your Collection
+
+Choose a descriptive name like "Q1 Budget Planning" or "Product Launch Materials".
+
+### Add a Description (Optional)
+
+Help team members understand what belongs in this collection.
+
+### Set Privacy Level
+
+Choose who can see and edit this collection:
+- **Private**: Only you
+- **Team**: Your team members
+- **Public**: Anyone with a link
+</Steps>
+
+### Adding Items to Collections
+
+**Drag and Drop:**
+1. Select items from search results
+2. Drag them to a collection in the sidebar
+3. Drop to add them instantly
+
+**Right-Click Menu:**
+1. Right-click on any item
+2. Select "Add to Collection"
+3. Choose the destination collection
+
+**Bulk Actions:**
+1. Select multiple items using checkboxes
+2. Click "Add to Collection" in the toolbar
+3. Choose where to add them
+
+## Essential Keyboard Shortcuts
+
+Master these shortcuts to work faster:
+
+| Action | Shortcut |
+|--------|----------|
+| **Search** | `Ctrl/Cmd + K` |
+| **Save Item** | `S` |
+| **Create Collection** | `Ctrl/Cmd + N` |
+| **Select All** | `Ctrl/Cmd + A` |
+| **Copy Link** | `Ctrl/Cmd + L` |
+| **Navigate Back** | `Backspace` |
+| **Navigate Forward** | `Shift + Backspace` |
+
+## Getting Help
+
+### In-App Help
+
+- **Help Icon**: Click the `?` icon for contextual help
+- **Tooltips**: Hover over interface elements for quick explanations
+- **Onboarding Tour**: Replay the initial tour from settings
+
+### Quick Tips
+
+import { Callout } from 'nextra/components'
+
+<Callout type="info" emoji="💡">
+**Search Tip**: Start with broad terms and gradually add more specific keywords if you get too many results.
+</Callout>
+
+<Callout type="info" emoji="⚡">
+**Speed Tip**: Use keyboard shortcuts for actions you perform frequently. They'll become second nature quickly.
+</Callout>
+
+<Callout type="warning" emoji="⚠️">
+**Organization Tip**: Create collections as you work rather than trying to organize everything at once later.
+</Callout>
+
+## Common Workflows
+
+### Daily Content Discovery
+
+1. **Morning Check**: Search for "yesterday" or "recent" to catch up
+2. **Project Focus**: Search for specific project names
+3. **Save as You Go**: Star interesting items immediately
+4. **End of Day**: Organize starred items into collections
+
+### Research Workflow
+
+1. **Broad Search**: Start with general terms
+2. **Refine Results**: Use filters to narrow down
+3. **Save References**: Create a research collection
+4. **Take Notes**: Add comments to saved items
+5. **Share Findings**: Export or share the collection
+
+### Team Collaboration
+
+1. **Shared Workspace**: Create team collections
+2. **Content Sharing**: Add teammates to relevant collections
+3. **Discussion**: Use comments to discuss findings
+4. **Progress Tracking**: Tag items with status updates
+
+## Next Steps
+
+Now that you understand the basics, you're ready to explore more advanced features:
+
+- [Advanced Search](/user-guide/advanced-search): Master complex queries and filters
+- [Organizing Content](/user-guide/organizing-content): Advanced organization strategies
+- [Collaboration](/user-guide/collaboration): Work effectively with teams
+- [Integrations](/user-guide/integrations): Connect your favorite tools
+
+## Practice Exercise
+
+Try this quick exercise to reinforce what you've learned:
+
+<Steps>
+### Search for Content
+
+Use the search bar to find something related to your work or interests.
+
+### Save Some Items
+
+Star 3-5 interesting results from your search.
+
+### Create a Collection
+
+Make a new collection with a descriptive name.
+
+### Organize Your Finds
+
+Move your starred items into the new collection.
+
+### Try a Filter
+
+Use date or type filters to refine a search.
+</Steps>
+
+Congratulations! You now have the foundation skills needed to use Findoora effectively. As you continue using the app, these actions will become automatic, and you'll discover even more ways to streamline your workflow.
