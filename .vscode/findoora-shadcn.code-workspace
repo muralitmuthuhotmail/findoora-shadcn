@@ -1,23 +1,23 @@
 {
   "folders": [
     {
-      "name": "🏠 Root",
+      "name": "Root",
       "path": "."
     },
     {
-      "name": "🌐 Web App",
+      "name": "Web App",
       "path": "../apps/web"
     },
     {
-      "name": "🎨 UI Components",
+      "name": "UI Components",
       "path": "../packages/ui"
     },
     {
-      "name": "🔧 ESLint Config",
+      "name": "ESLint Config",
       "path": "../packages/eslint-config"
     },
     {
-      "name": "📝 TypeScript Config",
+      "name": "TypeScript Config",
       "path": "../packages/typescript-config"
     }
   ],
