@@ -6,19 +6,19 @@
     },
     {
       "name": "🌐 Web App",
-      "path": "./apps/web"
+      "path": "../apps/web"
     },
     {
       "name": "🎨 UI Components",
-      "path": "./packages/ui"
+      "path": "../packages/ui"
     },
     {
       "name": "🔧 ESLint Config",
-      "path": "./packages/eslint-config"
+      "path": "../packages/eslint-config"
     },
     {
       "name": "📝 TypeScript Config",
-      "path": "./packages/typescript-config"
+      "path": "../packages/typescript-config"
     }
   ],
   "settings": {
