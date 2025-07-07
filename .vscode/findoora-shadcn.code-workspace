@@ -51,8 +51,7 @@
       "esbenp.prettier-vscode",
       "dbaeumer.vscode-eslint",
       "bradlc.vscode-tailwindcss",
-      "ms-vscode.vscode-typescript-next",
-      "usernamehw.errorlens"
+      "ms-vscode.vscode-typescript-next"
     ]
   }
 }
