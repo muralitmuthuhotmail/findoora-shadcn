@@ -73,10 +73,10 @@ findoora-shadcn/
 - **`apps/web/components/`**: Contains application-specific React components. Components should be primarily driven by props, with hooks used only for internal logic. Organize components into nested folders based on their purpose or functionality.
 - **`apps/web/pages/`**: Contains Next.js page components that compose UI using components from `apps/web/components/`. Hooks can be used here as needed. If a hook grows large or is reused, move it to the `apps/web/hooks/` directory. Nested folders can be created for different page groups or features.
 - **`apps/web/hooks/`**: Contains custom React hooks used across the application. Place reusable or complex hooks here to keep code organized and maintainable. Structure this folder with subdirectories if needed, based on hook purpose or feature area.
-- **`packages/ui/src/components/`**: Contains reusable UI components.
-    - **`ui`**: Atomic components, primarily sourced from shadcn.
-    - **`blocks`**: Purpose-specific blocks designed to accept content via props.
-- **`packages/ui/src/styles/`**: Global styles and themes
+- **`packages/ui/src/components/`**: Contains reusable UI components organized into two main categories:
+    - **`ui/`**: Atomic components and foundational design system elements, primarily sourced from shadcn/ui
+    - **`blocks/`**: Purpose-specific component blocks designed to accept content via props for common UI patterns
+- **`packages/ui/src/styles/`**: Global styles, themes, and design system configurations
 
 ## Development Workflow
 
