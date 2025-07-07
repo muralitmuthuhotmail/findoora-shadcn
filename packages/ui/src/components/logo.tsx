@@ -168,7 +168,7 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
       size = "sm",
       orientation = "horizontal",
       interactive = false,
-      iconVariant = "default",
+      iconVariant = "secondary",
       iconShape = "square",
       textWeight = "medium",
       iconClassName,
