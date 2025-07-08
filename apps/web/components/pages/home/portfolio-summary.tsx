@@ -5,8 +5,9 @@ import {
   NewsBlock,
   PerformanceChart,
   PortfolioGrid,
+  PortfolioHeader,
+  PortfolioMetricsGrid,
   PortfolioNavBar,
-  PortfolioSummaryBanner,
 } from "@/components/blocks/home";
 import { SectionContent, SectionLayout } from "@/components/layout";
 
@@ -18,8 +19,11 @@ export const PortfolioSummaryPage = () => {
       <div className="min-h-screen bg-background w-screen flex flex-col justify-center items-center">
         <SectionLayout spacing="normal" className="w-full max-w-7xl pt-6">
           <SectionContent className="space-y-8 w-full">
-            {/* Summary Banner */}
-            <PortfolioSummaryBanner />
+            {/* Portfolio Header */}
+            <PortfolioHeader />
+
+            {/* Portfolio Metrics */}
+            <PortfolioMetricsGrid />
 
             {/* Performance Chart Section */}
             <PerformanceChart />
