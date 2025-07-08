@@ -10,7 +10,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@workspace/ui/components/dropdown-menu";
-import { cn } from "@workspace/ui/lib/utils";
 import {
   ChevronDown,
   DollarSign,
@@ -119,47 +118,32 @@ export const PortfolioSummaryBanner = () => {
       </div>
 
       {/* Metrics Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <Card className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 md:gap-0 bg-card shadow-none py-4 md:py-6">
         {metrics.map((metric, index) => (
-          <Card key={index} className="relative overflow-hidden shadow-none">
+          <div
+            key={index}
+            className="relative overflow-hidden p-2 md:p-2 lg:p-0">
             <CardContent>
-              <div className="flex items-center justify-between space-y-0 pb-2">
+              <div className="flex items-center justify-between space-y-0 pb-0 md:pb-2 gap-2">
                 <div className="flex items-center space-x-2 text-muted-foreground">
                   {metric.icon}
                   <span className="text-sm font-medium">{metric.label}</span>
                 </div>
-                <Badge
-                  variant={
-                    metric.changeType === "positive" ? "default" : "destructive"
-                  }
-                  className="text-xs">
-                  {metric.change}
-                </Badge>
+                <Badge variant="outline">{metric.change}</Badge>
               </div>
               <div className="space-y-1">
-                <div className="text-2xl font-bold text-left">
+                <div className="text-lg md:text-xl font-semibold md:font-bold text-left">
                   {metric.value}
-                </div>
-                <div
-                  className={cn(
-                    "flex items-center text-xs",
-                    metric.changeType === "positive"
-                      ? "text-green-600"
-                      : "text-red-600"
-                  )}>
-                  {metric.changeType === "positive" ? (
-                    <TrendingUp className="h-3 w-3 mr-1" />
-                  ) : (
-                    <TrendingDown className="h-3 w-3 mr-1" />
-                  )}
-                  {metric.changeType === "positive" ? "Up" : "Down"} from
-                  yesterday
                 </div>
               </div>
             </CardContent>
-          </Card>
+            {/* vertical line */}
+            {index !== 0 && (
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 pointer-events-none max-w-1 rounded-full"></div>
+            )}
+          </div>
         ))}
-      </div>
+      </Card>
     </div>
   );
 };
