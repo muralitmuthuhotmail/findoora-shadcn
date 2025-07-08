@@ -22,9 +22,9 @@ import {
 interface SummaryMetric {
   label: string;
   value: string;
-  change: string;
-  changeType: "positive" | "negative";
-  icon: React.ReactNode;
+  change?: string;
+  changeType?: "positive" | "negative";
+  icon?: React.ReactNode;
 }
 
 const formatCurrency = (amount: number): string => {
