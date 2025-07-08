@@ -3,6 +3,7 @@
 import { mockSummaryMetrics } from "@/lib/data/mock-portfolio-data";
 import { Badge } from "@workspace/ui/components/badge";
 import { Card, CardContent } from "@workspace/ui/components/card";
+import { cn } from "@workspace/ui/lib/utils";
 import { DollarSign, Percent, TrendingDown, TrendingUp } from "lucide-react";
 
 interface SummaryMetric {
@@ -75,20 +76,28 @@ export const PortfolioMetricsGrid = () => {
           <CardContent>
             <div className="flex items-center justify-between space-y-0 pb-0 md:pb-2 gap-2">
               <div className="flex items-center space-x-2 text-muted-foreground">
-                {metric.icon}
+                {/* {metric.icon} */}
                 <span className="text-sm font-medium">{metric.label}</span>
               </div>
-              <Badge variant="outline">{metric.change}</Badge>
+              <Badge
+                variant="outline"
+                className={cn(
+                  metric.changeType === "positive"
+                    ? "bg-green-500/20"
+                    : "bg-red-500/20"
+                )}>
+                {metric.change}
+              </Badge>
             </div>
-            <div className="space-y-1">
-              <div className="text-lg md:text-xl font-semibold md:font-bold text-left">
+            <div>
+              <div className="text-lg md:text-xl font-semibold md:font-bold text-left dark:text-white">
                 {metric.value}
               </div>
             </div>
           </CardContent>
           {/* vertical line */}
           {index !== 0 && (
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 pointer-events-none max-w-1 rounded-full"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 pointer-events-none max-w-1 rounded-full hidden lg:block" />
           )}
         </div>
       ))}

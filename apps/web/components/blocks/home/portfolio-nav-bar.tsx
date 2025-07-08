@@ -1,5 +1,7 @@
 "use client";
 
+import { appConfig } from "@/app/app-config";
+import { routes } from "@/app/routes";
 import {
   Avatar,
   AvatarFallback,
@@ -14,15 +16,30 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@workspace/ui/components/dropdown-menu";
+import { Input } from "@workspace/ui/components/input";
 import Logo from "@workspace/ui/components/logo";
-import { Bell, LogOut, Plus, Search, Settings, User } from "lucide-react";
+import { cn } from "@workspace/ui/lib/utils";
+import { Bell, LogOut, Search, Settings, User } from "lucide-react";
 
 export const PortfolioNavBar = () => {
+  const innerContainerClasses = cn(
+    "flex items-center justify-between w-full mx-auto transition-all duration-[--duration] ease-in-out",
+    `max-w-${appConfig.maxWidth}`,
+    "gap-4"
+  );
   return (
-    <nav className="sticky top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b flex items-center justify-center">
-      <div className="container flex h-16 items-center justify-between max-w-7xl">
+    <nav className="flex w-full items-center justify-center px-4 py-3 backdrop-blur-md sticky top-0 z-50 border-b border-border/40 transition-all duration-200">
+      <div className={innerContainerClasses}>
         {/* Logo and Brand */}
-        <Logo />
+        <div className="flex-shrink-0">
+          <Logo
+            asLink
+            href={routes.home}
+            size="sm"
+            interactive
+            aria-label="Navigate to homepage"
+          />
+        </div>
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-1">
@@ -36,21 +53,19 @@ export const PortfolioNavBar = () => {
 
         {/* Right Side Actions */}
         <div className="flex items-center space-x-4">
-          {/* Add Portfolio Button */}
-          <Button variant="outline" size="sm" className="hidden md:flex">
-            <Plus className="h-4 w-4 mr-2" />
-            Add Portfolio
-          </Button>
-
           {/* Search */}
-          <Button variant="ghost" size="icon">
-            <Search className="h-4 w-4" />
-          </Button>
+          <div className="relative">
+            <Input
+              type="text"
+              placeholder="Search..."
+              className="pl-8 pr-2 h-8 w-64"
+            />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+          </div>
 
           {/* Notifications */}
           <Button variant="ghost" size="icon" className="relative">
             <Bell className="h-4 w-4" />
-            <span className="absolute -top-1 -right-1 h-2 w-2 bg-red-500 rounded-full"></span>
           </Button>
 
           {/* User Menu */}

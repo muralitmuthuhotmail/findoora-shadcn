@@ -11,10 +11,10 @@ import { ChevronDown, Plus } from "lucide-react";
 
 export const PortfolioHeader = () => {
   return (
-    <div className="space-y-2 flex justify-between items-center w-full">
-      <h1 className="text-xl font-bold text-left px-2">All Portfolio</h1>
-      <div className="inline-flex items-center">
-        <Button size="sm" className="!px-5 ml-2">
+    <div className="space-2 flex md:justify-between md:items-center w-full flex-col-reverse md:flex-row gap-6">
+      <h1 className="text-xl font-bold text-left px-4">All Portfolio</h1>
+      <div className="flex md:flex-row flex-row-reverse items-center md:justify-center justify-between">
+        <Button size="sm" className="!px-4">
           <Plus />
           Add Portfolio
         </Button>
