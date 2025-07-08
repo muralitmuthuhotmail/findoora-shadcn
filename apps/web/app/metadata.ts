@@ -138,3 +138,28 @@ export const resetPasswordPageMetadata: Metadata = {
     description: "Set a new password for your Findoora account.",
   },
 };
+export const summaryPageMetadata: Metadata = {
+  title: "Portfolio Summary | PortfolioManager",
+  description:
+    "View your portfolio performance, asset allocation, and market updates in one comprehensive dashboard.",
+  keywords: [
+    ...baseKeywords,
+    "portfolio",
+    "investment",
+    "stocks",
+    "dashboard",
+    "financial",
+  ],
+  openGraph: {
+    ...baseOpenGraph,
+    title: "Portfolio Summary | PortfolioManager",
+    description:
+      "View your portfolio performance, asset allocation, and market updates in one comprehensive dashboard.",
+  },
+  twitter: {
+    ...baseTwitter,
+    title: "Portfolio Summary | PortfolioManager",
+    description:
+      "View your portfolio performance, asset allocation, and market updates in one comprehensive dashboard.",
+  },
+};
