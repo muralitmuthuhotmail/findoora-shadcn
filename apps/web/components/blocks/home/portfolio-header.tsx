@@ -60,7 +60,7 @@ export const PortfolioHeader = ({
   );
   return (
     <section
-      className="space-2 flex md:justify-between md:items-center w-full flex-col-reverse md:flex-row gap-6"
+      className="space-2 flex md:justify-between md:items-center w-full flex-col-reverse md:flex-row gap-6 px-2"
       aria-label="Portfolio Header">
       <div className="mx-1 gap-1">
         <h1
