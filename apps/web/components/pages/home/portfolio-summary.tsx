@@ -3,6 +3,7 @@
 import { appConfig } from "@/app/app-config";
 import {
   NewsBlock,
+  PerformanceChart,
   PortfolioHeader,
   PortfolioMetricsGrid,
   PortfolioNavBar,
@@ -33,7 +34,7 @@ export const PortfolioSummaryPage = () => {
               <PortfolioMetricsGrid />
 
               {/* Performance Chart Section */}
-              {/* <PerformanceChart /> */}
+              <PerformanceChart />
 
               {/* Portfolio Grid and Diversification */}
               {/* <div className="grid lg:grid-cols-3 gap-6">

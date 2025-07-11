@@ -8,8 +8,39 @@ import {
   CardTitle,
 } from "@workspace/ui/components/card";
 import { Tabs, TabsList, TabsTrigger } from "@workspace/ui/components/tabs";
+import { cn } from "@workspace/ui/lib/utils";
 import { BarChart3 } from "lucide-react";
 import { useState } from "react";
+
+export const PerformanceTimeRangeToggle = ({
+  range,
+  value,
+  onValueChange,
+}: {
+  range: string[];
+  value: string;
+  onValueChange?: (value: string) => void;
+}) => {
+  return (
+    <Tabs value={value} onValueChange={onValueChange}>
+      <TabsList className="border-border border-1 p-1">
+        {range.map((rangeItem) => (
+          <TabsTrigger
+            key={rangeItem}
+            value={rangeItem}
+            className={cn(
+              `data-[state=active]:bg-primary/90 data-[state=active]:text-primary-foreground transition-all`,
+              value === rangeItem
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted text-muted-foreground"
+            )}>
+            {rangeItem}
+          </TabsTrigger>
+        ))}
+      </TabsList>
+    </Tabs>
+  );
+};
 
 export const PerformanceChart = () => {
   const [timeRange, setTimeRange] = useState("1Y");
@@ -18,19 +49,16 @@ export const PerformanceChart = () => {
     <Card className="w-full shadow-none">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <div className="flex items-center space-x-2">
-          <BarChart3 className="h-5 w-5 text-primary" />
-          <CardTitle className="text-xl font-semibold">
-            Performance vs Benchmark
+          {/* <BarChart3 className="h-5 w-5 text-primary" /> */}
+          <CardTitle className="text-xl font-semibold text-left">
+            Performance
           </CardTitle>
         </div>
-        <Tabs value={timeRange} onValueChange={setTimeRange}>
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="1M">1M</TabsTrigger>
-            <TabsTrigger value="3M">3M</TabsTrigger>
-            <TabsTrigger value="1Y">1Y</TabsTrigger>
-            <TabsTrigger value="All">All</TabsTrigger>
-          </TabsList>
-        </Tabs>
+        <PerformanceTimeRangeToggle
+          range={["1W", "1M", "3M", "1Y", "YTD", "5Y", "All"]}
+          value={timeRange}
+          onValueChange={setTimeRange}
+        />
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
@@ -66,7 +94,9 @@ export const PerformanceChart = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t">
             <div className="text-center space-y-1">
               <p className="text-sm font-medium">Annual Return</p>
-              <p className="text-2xl font-bold text-green-600">+13.2%</p>
+              <p className="text-2xl font-bold text-[var(--color-positive)]">
+                +13.2%
+              </p>
             </div>
             <div className="text-center space-y-1">
               <p className="text-sm font-medium">Volatility</p>
