@@ -15,7 +15,7 @@ export const PortfolioSummaryPage = () => {
     <>
       {/* Navigation Bar */}
       <PortfolioNavBar />
-      <div className="flex w-full items-center justify-center px-4 py-3">
+      <div className="flex w-full items-center justify-center px-4 py-2">
         <div
           className={cn(
             "flex flex-col items-center justify-center w-full mx-auto",
@@ -24,7 +24,7 @@ export const PortfolioSummaryPage = () => {
           )}>
           <SectionLayout
             spacing="normal"
-            className="w-full pt-6 flex flex-col items-center justify-center mx-auto">
+            className="w-full pt-6 flex flex-col items-center justify-center mx-auto mt-0">
             <SectionContent className="space-y-8 w-full">
               {/* Portfolio Header */}
               <PortfolioHeader />

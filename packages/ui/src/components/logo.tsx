@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@workspace/ui/lib/utils";
-import React, { forwardRef } from "react";
 import { GalleryVerticalEnd, type LucideIcon } from "lucide-react";
+import React, { forwardRef } from "react";
 
 // Size configurations
 type LogoSize = "xs" | "sm" | "md" | "lg" | "xl";
@@ -168,7 +168,7 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
       size = "sm",
       orientation = "horizontal",
       interactive = false,
-      iconVariant = "secondary",
+      iconVariant = "default",
       iconShape = "square",
       textWeight = "medium",
       iconClassName,
@@ -182,7 +182,7 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
       onClick,
       ...props
     },
-    ref,
+    ref
   ) => {
     const Component = asLink ? "a" : "div";
     const isInteractive = interactive || asLink || !!onClick;
@@ -196,7 +196,7 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
       sizeStyles.gap,
       orientation === "vertical" ? "flex-col" : "flex-row",
       isInteractive && "hover:opacity-80 active:scale-95 cursor-pointer",
-      className,
+      className
     );
 
     const iconClasses = cn(
@@ -204,14 +204,14 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
       sizeStyles.iconSize,
       iconVariantConfig[iconVariant],
       iconShapeConfig[iconShape],
-      iconClassName,
+      iconClassName
     );
 
     const textClasses = cn(
       "transition-colors duration-200",
       sizeStyles.textSize,
       textWeightConfig[textWeight],
-      textClassName,
+      textClassName
     );
 
     const linkProps = asLink
@@ -235,8 +235,7 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
         onClick={onClick}
         {...linkProps}
         {...accessibilityProps}
-        {...props}
-      >
+        {...props}>
         <div className={iconClasses} aria-hidden={!hideText}>
           <IconComponent className={sizeStyles.innerIcon} />
         </div>
@@ -244,7 +243,7 @@ export const Logo = forwardRef<HTMLElement, LogoProps>(
         {!hideText && <span className={textClasses}>{text}</span>}
       </Component>
     );
-  },
+  }
 );
 
 Logo.displayName = "Logo";

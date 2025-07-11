@@ -28,7 +28,7 @@ export const PortfolioNavBar = () => {
     "gap-4"
   );
   return (
-    <nav className="flex w-full items-center justify-center px-4 py-3 backdrop-blur-md sticky top-0 z-50 border-b border-border/40 transition-all duration-200">
+    <nav className="flex w-full items-center justify-center px-4 py-3 backdrop-blur-lg sticky top-0 z-50 border-b border-border/40 transition-all duration-200 bg-gradient shadow-sm bg-card/70">
       <div className={innerContainerClasses}>
         {/* Logo and Brand */}
         <div className="flex-shrink-0">
@@ -54,7 +54,7 @@ export const PortfolioNavBar = () => {
         {/* Right Side Actions */}
         <div className="flex items-center space-x-4">
           {/* Search */}
-          <div className="relative">
+          <div className="relative hidden md:block">
             <Input
               type="text"
               placeholder="Search..."
@@ -62,16 +62,24 @@ export const PortfolioNavBar = () => {
             />
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
           </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="relative block md:hidden">
+            <Search />
+          </Button>
 
           {/* Notifications */}
           <Button variant="ghost" size="icon" className="relative">
-            <Bell className="h-4 w-4" />
+            <Bell />
           </Button>
 
           {/* User Menu */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+              <Button
+                variant="outline"
+                className="relative h-8 w-8 rounded-full">
                 <Avatar className="h-8 w-8">
                   <AvatarImage src="/placeholder-avatar.jpg" alt="User" />
                   <AvatarFallback>JD</AvatarFallback>

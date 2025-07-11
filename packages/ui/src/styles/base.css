@@ -17,7 +17,20 @@
     -webkit-backdrop-filter: blur(20px);
   }
   .bg-placeholder {
-    background: -webkit-linear-gradient(to bottom, transparent, var(--color-secondary));
+    background: -webkit-linear-gradient(
+      to bottom,
+      transparent,
+      var(--color-secondary)
+    );
     background: linear-gradient(to bottom, transparent, var(--color-secondary));
+  }
+  .text-color-success {
+    color: var(--color-success);
+  }
+  .bg-color-success {
+    background-color: var(--color-success);
+  }
+  .outline-color-success {
+    outline-color: var(--color-success);
   }
 }

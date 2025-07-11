@@ -3,7 +3,6 @@
 import { mockSummaryMetrics } from "@/lib/data/mock-portfolio-data";
 import { Badge } from "@workspace/ui/components/badge";
 import { Card, CardContent } from "@workspace/ui/components/card";
-import { cn } from "@workspace/ui/lib/utils";
 import { DollarSign, Percent, TrendingDown, TrendingUp } from "lucide-react";
 
 interface SummaryMetric {
@@ -79,18 +78,10 @@ export const PortfolioMetricsGrid = () => {
                 {/* {metric.icon} */}
                 <span className="text-sm font-medium">{metric.label}</span>
               </div>
-              <Badge
-                variant="outline"
-                className={cn(
-                  metric.changeType === "positive"
-                    ? "bg-green-500/20"
-                    : "bg-red-500/20"
-                )}>
-                {metric.change}
-              </Badge>
+              <Badge variant="outline">{metric.change}</Badge>
             </div>
-            <div>
-              <div className="text-lg md:text-xl font-semibold md:font-bold text-left dark:text-white">
+            <div className="space-y-1">
+              <div className="text-lg md:text-xl font-semibold md:font-bold text-left text-color-success">
                 {metric.value}
               </div>
             </div>
