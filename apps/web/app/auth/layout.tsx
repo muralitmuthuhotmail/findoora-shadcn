@@ -1,18 +1,14 @@
-"use client";
-import Navbar from "@/components/navbar";
-import { AnimatedComponent } from "@/components/blocks/hero/animated-component";
 import { appConfig } from "@/app/app-config";
-import { useId } from "react";
-import { usePathname } from "next/navigation";
 import { routes } from "@/app/routes";
+import { AnimatedComponent } from "@/components/blocks/hero/animated-component";
+import Navbar from "@/components/navbar";
+import { useId } from "react";
 
 export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-
   return (
     <>
       <Navbar
@@ -40,9 +36,8 @@ export default function AuthLayout({
         />
         <div
           className="flex w-full sm:max-w-md flex-col gap-6 h-hull"
-          id={useId()}
-        >
-          <AnimatedComponent key={pathname}>{children}</AnimatedComponent>
+          id={useId()}>
+          <AnimatedComponent>{children}</AnimatedComponent>
         </div>
       </div>
     </>
