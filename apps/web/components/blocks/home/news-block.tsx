@@ -54,7 +54,7 @@ const formatPercentage = (percent: number): string => {
 
 export const NewsBlock = () => {
   return (
-    <Card className="w-full shadow-none">
+    <Card className="w-full shadow-none rounded-none md:rounded-xl">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-6">
         <div className="flex items-center space-x-2">
           <Newspaper className="h-5 w-5 text-primary" />

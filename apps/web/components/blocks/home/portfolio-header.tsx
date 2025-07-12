@@ -36,19 +36,19 @@ export const PortfolioHeader = ({
       id: "1",
       name: "Portfolio 1",
       description: "My selfwealth",
-      icon: "Wallet",
+      // icon: "Wallet",
     },
     {
       id: "2",
       name: "Portfolio 2",
       description: "My Moomoo",
-      icon: "RollerCoaster",
+      // icon: "RollerCoaster",
     },
     {
       id: "3",
       name: "Portfolio 3",
       description: "Other Assets",
-      icon: "Building",
+      // icon: "Building",
     },
   ],
   onAddPortfolio,
@@ -60,9 +60,9 @@ export const PortfolioHeader = ({
   );
   return (
     <section
-      className="space-2 flex md:justify-between md:items-center w-full flex-col-reverse md:flex-row gap-6 px-2"
+      className="space-2 flex md:justify-between md:items-center w-full flex-col-reverse md:flex-row gap-6 px-4"
       aria-label="Portfolio Header">
-      <div className="mx-1 gap-1">
+      <div className="mx-1 gap-1 hidden md:flex md:flex-col">
         <h1
           className="text-xl font-bold text-left"
           tabIndex={0}
@@ -80,20 +80,23 @@ export const PortfolioHeader = ({
           <DropdownMenuTrigger asChild>
             <Button
               variant={"outline"}
-              className="!px-auto flex items-center gap-2 w-50 group justify-between"
+              className="!px-auto flex items-center gap-2 md:w-40 group justify-between"
               aria-haspopup="listbox"
               aria-expanded="false"
               aria-label="Select Portfolio">
-              <div className="flex items-center gap-2">
+              <div className="items-center gap-2">
                 {currentPortfolio?.icon && (
-                  <Icon name={currentPortfolio.icon} />
+                  <Icon
+                    name={currentPortfolio.icon}
+                    className="hidden md:visible"
+                  />
                 )}
                 {currentPortfolio ? currentPortfolio.name : "Select Portfolio"}
               </div>
               <ChevronDown className="h-4 w-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-50" role="listbox">
+          <DropdownMenuContent className="md:w-40" role="listbox">
             {portfolios.map((portfolio) => (
               <DropdownMenuItem
                 key={portfolio.id}
@@ -109,7 +112,9 @@ export const PortfolioHeader = ({
                 }
                 aria-selected={portfolio.id === currentPortfolioId}
                 tabIndex={0}>
-                {portfolio.icon && <Icon name={portfolio.icon} />}
+                {portfolio.icon && (
+                  <Icon name={portfolio.icon} className="hidden md:flex" />
+                )}
                 <div className="flex flex-col my-2">
                   <span className="text-md">{portfolio.name}</span>
                   <span className="text-xs">{portfolio.description}</span>
@@ -123,7 +128,7 @@ export const PortfolioHeader = ({
           onClick={onAddPortfolio}
           aria-label="Add Portfolio">
           <Plus />
-          Add Portfolio
+          Create Portfolio
         </Button>
       </div>
     </section>

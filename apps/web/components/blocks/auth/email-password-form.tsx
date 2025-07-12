@@ -1,12 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { routes } from "@/app/routes";
 import { Link } from "@/components/ui/link";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@workspace/ui/components/button";
-import { Input } from "@workspace/ui/components/input";
 import {
   Form,
   FormControl,
@@ -15,7 +12,10 @@ import {
   FormLabel,
   FormMessage,
 } from "@workspace/ui/components/form";
-import { routes } from "@/app/routes";
+import { Input } from "@workspace/ui/components/input";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 // Form validation schema with improved error messages
 const loginSchema = z.object({
@@ -118,12 +118,11 @@ export function EmailPasswordForm({
             name="password"
             render={({ field }) => (
               <FormItem>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between mr-1">
                   <FormLabel>Password</FormLabel>
                   <Link
                     href={routes.forgotPassword}
-                    className="text-sm text-primary underline-offset-4 hover:underline"
-                  >
+                    className="text-sm underline-offset-4 hover:underline">
                     Forgot password?
                   </Link>
                 </div>
@@ -147,8 +146,7 @@ export function EmailPasswordForm({
             type="submit"
             className="w-full text-md"
             size={"lg"}
-            disabled={isFormDisabled}
-          >
+            disabled={isFormDisabled}>
             {isLoading ? "Signing in..." : "Sign in"}
           </Button>
         </div>

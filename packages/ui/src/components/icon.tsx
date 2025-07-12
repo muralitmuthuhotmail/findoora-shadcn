@@ -18,7 +18,7 @@ const Icon: React.FC<IconProps> = ({
   className,
   ...rest
 }) => {
-  const classNames = cn("mx-1", className);
+  const classNames = cn(className);
   const LucideIcon = React.lazy(() =>
     import("lucide-react").then((mod) => {
       const IconComponent = mod[name];
@@ -31,9 +31,9 @@ const Icon: React.FC<IconProps> = ({
       // fallback to a dummy component if icon not found
       return {
         default: () => (
-          <span
+          <Skeleton
             className={classNames}
-            style={{ width: size, height: size, display: "inline-block" }}
+            style={{ width: size, height: size }}
           />
         ),
       };
@@ -45,7 +45,7 @@ const Icon: React.FC<IconProps> = ({
       fallback={
         <Skeleton
           className={classNames}
-          style={{ width: size, height: size, display: "inline-block" }}
+          style={{ width: size, height: size }}
         />
       }>
       <LucideIcon

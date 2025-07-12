@@ -1,6 +1,5 @@
 "use client";
 
-import { mockPerformanceData } from "@/lib/data/mock-portfolio-data";
 import {
   Card,
   CardContent,
@@ -9,21 +8,28 @@ import {
 } from "@workspace/ui/components/card";
 import { Tabs, TabsList, TabsTrigger } from "@workspace/ui/components/tabs";
 import { cn } from "@workspace/ui/lib/utils";
-import { BarChart3 } from "lucide-react";
 import { useState } from "react";
+import { ChartLineInteractive } from "../line-chart";
 
 export const PerformanceTimeRangeToggle = ({
   range,
   value,
+  defaultValue,
   onValueChange,
+  className,
 }: {
   range: string[];
-  value: string;
+  value?: string;
+  defaultValue?: string;
   onValueChange?: (value: string) => void;
+  className?: string;
 }) => {
   return (
-    <Tabs value={value} onValueChange={onValueChange}>
-      <TabsList className="border-border border-1 p-1">
+    <Tabs
+      className={cn(className)}
+      value={value || defaultValue || range[0]}
+      onValueChange={onValueChange}>
+      <TabsList className={cn("border-border border-1 p-1", className)}>
         {range.map((rangeItem) => (
           <TabsTrigger
             key={rangeItem}
@@ -46,7 +52,7 @@ export const PerformanceChart = () => {
   const [timeRange, setTimeRange] = useState("1Y");
 
   return (
-    <Card className="w-full shadow-none">
+    <Card className="w-full shadow-none rounded-none md:rounded-xl">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <div className="flex items-center space-x-2">
           {/* <BarChart3 className="h-5 w-5 text-primary" /> */}
@@ -54,7 +60,10 @@ export const PerformanceChart = () => {
             Performance
           </CardTitle>
         </div>
+        {/* Desktop Time Range Toggle */}
         <PerformanceTimeRangeToggle
+          className="md:block hidden"
+          defaultValue="1Y"
           range={["1W", "1M", "3M", "1Y", "YTD", "5Y", "All"]}
           value={timeRange}
           onValueChange={setTimeRange}
@@ -63,7 +72,7 @@ export const PerformanceChart = () => {
       <CardContent>
         <div className="space-y-4">
           {/* Chart Legend */}
-          <div className="flex items-center space-x-6 text-sm">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-start space-x-6 text-sm">
             <div className="flex items-center space-x-2">
               <div className="w-3 h-3 bg-primary rounded-full"></div>
               <span>Your Portfolio (+13.2%)</span>
@@ -75,36 +84,32 @@ export const PerformanceChart = () => {
           </div>
 
           {/* Mock Chart Area */}
-          <div className="h-[300px] w-full bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg flex items-center justify-center border border-border">
-            <div className="text-center space-y-2">
-              <BarChart3 className="h-12 w-12 text-primary mx-auto" />
-              <p className="text-sm text-muted-foreground">
-                Interactive chart would display here
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Performance data for {timeRange} period
-              </p>
-              <div className="text-xs text-muted-foreground mt-4">
-                Data points: {mockPerformanceData.length} months
-              </div>
-            </div>
-          </div>
+          <ChartLineInteractive />
+
+          {/* Mobile Time Range Toggle */}
+          <PerformanceTimeRangeToggle
+            className="md:hidden flex w-full my-2"
+            defaultValue="1Y"
+            range={["1W", "1M", "3M", "1Y", "YTD", "5Y", "All"]}
+            value={timeRange}
+            onValueChange={setTimeRange}
+          />
 
           {/* Performance Summary */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t">
+          <div className="grid grid-cols-3 gap-4 pt-4 border-t">
             <div className="text-center space-y-1">
-              <p className="text-sm font-medium">Annual Return</p>
-              <p className="text-2xl font-bold text-[var(--color-positive)]">
+              <p className="text-xs md:text-sm font-medium">Annual Return</p>
+              <p className="text-lg md:text-xl font-bold text-[var(--color-positive)]">
                 +13.2%
               </p>
             </div>
             <div className="text-center space-y-1">
-              <p className="text-sm font-medium">Volatility</p>
-              <p className="text-2xl font-bold">8.4%</p>
+              <p className="text-xs md:text-sm font-medium">Volatility</p>
+              <p className="text-lg md:text-xl font-bold">8.4%</p>
             </div>
             <div className="text-center space-y-1">
-              <p className="text-sm font-medium">Sharpe Ratio</p>
-              <p className="text-2xl font-bold">1.57</p>
+              <p className="text-xs md:text-sm font-medium">Sharpe Ratio</p>
+              <p className="text-lg md:text-xl font-bold">1.57</p>
             </div>
           </div>
         </div>

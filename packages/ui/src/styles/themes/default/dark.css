@@ -1,38 +1,39 @@
+/* Updated to use Apple's dark theme colors */
 .dark {
-  --background: oklch(0 0 0);
-  --foreground: oklch(0.9328 0.0025 228.7857);
-  --card: oklch(0.2097 0.008 274.5332);
-  --card-foreground: oklch(0.8853 0 0);
-  --popover: oklch(0 0 0);
-  --popover-foreground: oklch(0.9328 0.0025 228.7857);
-  --primary: oklch(0.56 0.1607 245.011);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.9622 0.0035 219.5331);
-  --secondary-foreground: oklch(0.1884 0.0128 248.5103);
-  --muted: oklch(0.209 0 0);
-  --muted-foreground: oklch(0.5637 0.0078 247.9662);
-  --accent: oklch(0.1928 0.0331 242.5459);
-  --accent-foreground: oklch(0.56 0.1607 245.011);
-  --destructive: oklch(0.6188 0.2376 25.7658);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.2674 0.0047 248.0045);
-  --input: oklch(0.302 0.0288 244.8244);
-  --ring: oklch(0.6818 0.1584 243.354);
-  --chart-1: oklch(0.6723 0.1606 244.9955);
-  --chart-2: oklch(0.6907 0.1554 160.3454);
-  --chart-3: oklch(0.8214 0.16 82.5337);
-  --chart-4: oklch(0.7064 0.1822 151.7125);
-  --chart-5: oklch(0.5919 0.2186 10.5826);
-  --sidebar: oklch(0.2097 0.008 274.5332);
-  --sidebar-foreground: oklch(0.8853 0 0);
-  --sidebar-primary: oklch(0.6818 0.1584 243.354);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.1928 0.0331 242.5459);
-  --sidebar-accent-foreground: oklch(0.56 0.1607 245.011);
-  --sidebar-border: oklch(0.3795 0.022 240.5943);
-  --sidebar-ring: oklch(0.6818 0.1584 243.354);
-  --positive: oklch(0.6907 0.1554 160.3454); /* green-500 (oklch) */
-  --positive-foreground: oklch(1 0 0);
-  --negative: var(--color-red-400); /* red-600 (oklch) */
-  --negative-foreground: oklch(1 0 0);
+  --background: rgb(28, 28, 30); /* systemBackgroundDark */
+  --foreground: rgb(229, 229, 234); /* label color */
+  --card: rgb(44, 44, 46); /* secondarySystemBackgroundDark */
+  --card-foreground: rgb(229, 229, 234);
+  --popover: rgb(44, 44, 46); /* popover background */
+  --popover-foreground: rgb(229, 229, 234);
+  --primary: rgb(10, 132, 255); /* systemBlueDark */
+  --primary-foreground: rgb(255, 255, 255);
+  --secondary: rgb(99, 99, 102); /* secondaryLabelDark */
+  --secondary-foreground: rgb(229, 229, 234);
+  --muted: rgb(38, 38, 38); /* shadcn muted background */
+  --muted-foreground: rgb(161, 161, 170); /* shadcn muted foreground */
+  --accent: rgba(61, 61, 61, 0.416); /* systemGreenDark */
+  --accent-foreground: rgb(255, 255, 255);
+  --destructive: rgb(255, 69, 58); /* systemRedDark */
+  --destructive-foreground: rgb(255, 255, 255);
+  --border: rgb(72, 72, 74); /* separatorDark */
+  --input: rgb(44, 44, 46); /* input background */
+  --ring: rgb(10, 132, 255); /* systemBlueDark */
+  --chart-1: rgb(48, 209, 88); /* systemGreenDark */
+  --chart-2: rgb(255, 214, 10); /* systemYellowDark */
+  --chart-3: rgb(255, 159, 10); /* systemOrangeDark */
+  --chart-4: rgb(191, 90, 242); /* systemPurpleDark */
+  --chart-5: rgb(255, 55, 95); /* systemPinkDark */
+  --sidebar: rgb(44, 44, 46); /* sidebar background */
+  --sidebar-foreground: rgb(229, 229, 234);
+  --sidebar-primary: rgb(10, 132, 255); /* systemBlueDark */
+  --sidebar-primary-foreground: rgb(255, 255, 255);
+  --sidebar-accent: rgb(48, 209, 88); /* systemGreenDark */
+  --sidebar-accent-foreground: rgb(28, 28, 30);
+  --sidebar-border: rgb(72, 72, 74); /* separatorDark */
+  --sidebar-ring: rgb(10, 132, 255); /* systemBlueDark */
+  --positive: rgb(48, 209, 88); /* systemGreenDark */
+  --positive-foreground: rgb(28, 28, 30);
+  --negative: rgb(255, 69, 58); /* systemRedDark */
+  --negative-foreground: rgb(255, 255, 255);
 }
