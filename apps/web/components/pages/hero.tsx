@@ -38,7 +38,9 @@ export default function HeroPage() {
               key={index}
               delay={index * 0.1}
               className="min-h-screen">
-              <Suspense fallback={<LoadingSpinner />}>{Section}</Suspense>
+              <Suspense fallback={<LoadingSpinner className="min-h-screen" />}>
+                {Section}
+              </Suspense>
             </AnimatedComponent>
           ))}
         </div>
