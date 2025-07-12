@@ -13,7 +13,7 @@ export const PortfolioSummaryPage = () => {
       id="portfolio-summary"
       spacing="normal"
       align="left"
-      className="w-full pt-6 flex flex-col items-center justify-center mx-auto mt-0">
+      className="w-full pt-6 flex flex-col items-center justify-start mx-auto mt-0">
       <SectionContent className="space-y-4 w-full">
         {/* Portfolio Header */}
         <PortfolioHeader />
