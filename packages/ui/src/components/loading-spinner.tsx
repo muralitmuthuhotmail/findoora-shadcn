@@ -1,10 +1,10 @@
-import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { LoaderIcon } from "lucide-react";
+import * as React from "react";
 
 import { cn } from "@workspace/ui/lib/utils";
 
-const loadingSpinnerVariants = cva("animate-spin text-primary", {
+const loadingSpinnerVariants = cva("animate-spin", {
   variants: {
     size: {
       default: "h-8 w-8",
@@ -25,8 +25,7 @@ const LoadingSpinner = React.forwardRef<SVGSVGElement, LoadingSpinnerProps>(
   ({ className, size, ...props }, ref) => {
     return (
       <div
-        className={cn("flex center w-full h-full justify-center items-center")}
-      >
+        className={cn("flex center w-full h-full justify-center items-center")}>
         <LoaderIcon
           className={cn(loadingSpinnerVariants({ size, className }))}
           ref={ref}
@@ -34,7 +33,7 @@ const LoadingSpinner = React.forwardRef<SVGSVGElement, LoadingSpinnerProps>(
         />
       </div>
     );
-  },
+  }
 );
 LoadingSpinner.displayName = "LoadingSpinner";
 
